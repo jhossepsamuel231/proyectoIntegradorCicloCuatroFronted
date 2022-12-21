@@ -1,0 +1,108 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="general"> <br>
+
+                <h1 class="titulo1">REGISTRAR RESOLUCIÓN</h1>
+
+                <div class="cuadroscabeza">
+
+                    <div class="cuadross m-5">
+                        <div class="row g-2">
+
+                            <div class="col-8">
+                                <div class="cuadro1 shadow-lg d-block justify-content-center">
+                                    <div class="parte1a p-1">
+                                        <label for="exampleFormControlInput1" class="enca form-label">
+                                            ASUNTO : RESOLUCIÓN DE RECONOCIMIENTO
+                                        </label>
+                                    </div>
+
+                                    <div class="parte2a1 p-1">
+                                        <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
+                                            placeholder="Ingrese el Nombre de la Organización Social"
+                                            [(ngModel)]="resolucionDto.nombreOrganizacion">
+                                    </div>
+                                    <div class="parte2a2 p-1">
+                                        <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
+                                            placeholder="Ingrese una breve descripción sobre la resolución de reconocimiento"
+                                            [(ngModel)]="resolucionDto.descripcionResolucion">
+                                    </div>
+
+                                    <div class="parte3a p-1 d-flex justify-content-star">
+
+                                        <div class="arch">
+                                            <input type="file" class="adj" (change)="seleccionarFile($event)"
+                                                accept=".pdf">
+                                        </div>
+                                        <label for="exampleFormControlInput1" class="aba form-label">
+                                            ADJUNTAR RESOLUCIÓN RUOS
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="cuadro2 shadow-lg d-block justify-content-center">
+                                    <div class="parte1b border">
+                                        <label for="exampleFormControlInput1" class="enca2 form-label">
+                                            ORGANIZACIÓN SELECCIONADA
+                                        </label>
+                                    </div>
+                                    <div class="parte2b d-block justify-content-star">
+
+                                        <div class="container">
+                                            <div class=" cajas row g-2  d-flex justify-content-star">
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        NOMBRE:
+                                                    </label>
+                                                    <input type="text" class="nombrecaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="informeTecnico.solicitud.nombreOrganizacion">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        CÓDIGO:
+                                                    </label>
+                                                    <input type="text" class="nombrecaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="informeTecnico.codigoInformeTecnico">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        RESULTADO:
+                                                    </label>
+                                                    <input type="text" class="resultadocaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="informeTecnico.resultado">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        FECHA SOLICITUD:
+                                                    </label>
+                                                    <input type="text" class="fechacaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [ngModel]="informeTecnico.fechaEmision | date:'dd/MM/YYYY'">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="parte3b"></div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="subreso btn btn" (click)="registrarInformeTecnico()">SUBIR RESOLUCIÓN</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

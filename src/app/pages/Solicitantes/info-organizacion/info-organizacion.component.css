@@ -1,0 +1,59 @@
+.content{
+    background: rgba(158, 155, 155, 0.096);
+}
+
+.titulo1 {
+    text-align: center;
+    margin: 25px;
+    color: rgba(36, 34, 34, 0.568);
+}
+.contenidogene{
+    margin-top: 6%;
+}
+.contecua{
+    background-color: rgba(255, 255, 255, 0.555);
+    border-radius: 10px;
+}
+.cuadroimg{
+margin-top: 2%;
+}
+.imagen1{
+    width: 50%;
+    height: 60%;
+}
+.imgfile{
+    color:  #070707cc;
+    line-height: 50px;
+}
+.juntalb{
+    width: 100%;
+    background-color: #198754b7;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+.nombreorgcaja{
+    width: 61%;
+    margin-left: 3%;
+    border-radius: 7px;
+}
+.tipocaja{
+    width: 66%;
+    margin-left: 3%;
+    border-radius: 7px;  
+}
+.nivelcaja{
+    width: 65%;
+    margin-left: 3%;
+    border-radius: 7px;  
+}
+.zonacaja{
+    width: 65%;
+    margin-left: 3%;
+    border-radius: 7px;  
+}
+.direcaja{
+    width: 58%;
+    margin-left: 3%;
+    border-radius: 7px;
+}

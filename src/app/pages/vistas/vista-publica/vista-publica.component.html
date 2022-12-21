@@ -1,0 +1,229 @@
+<!-- <app-header-principal></app-header-principal> -->
+<!-- 
+<body> -->
+<nav id="fondoImgPrincipal">
+    <div class="container">
+        <h1>MUNICIPALIDAD DE CHACLACAYO</h1>
+        <p class="tagline">Registra o actualiza tu Organizacion Social
+        </p>
+        <a class="buttonLogeo" style="margin-right: 0.5rem;" routerLink="/principal-panel/login"
+            routerLinkActive="active-link"> INICIAR SESION
+        </a>
+        <a class="buttonLogeo" style="margin-left: 0.5rem;" routerLink="/principal-panel/crear-cuenta"
+            routerLinkActive="active-link"> CREAR CUENTA
+        </a>
+    </div>
+</nav>
+
+<!-- <div class="content-page">
+        <div class="content"> -->
+<div class="container-fluid">
+
+    <div class="container  contenedorPricnipal">
+        <main class="izquierdaPrincipal">
+            <article class="dentroIzqPrin">
+                <h1 class="thin">¿Que es el RUOS?</h1>
+                <br>
+                <p class="text-muted">
+                    El Registro Único de Organizaciones sociales –RUOS, es el sistema y proceso de
+                    reconocimiento y
+                    registro, a
+                    cargo de las municipalidades distritales de la provincia de Lima y de la Municipalidad
+                    Metropolitana
+                    de
+                    Lima, en
+                    sus respectivos niveles, de las organizaciones sociales ubicadas al interior de sus
+                    jurisdicciones.
+
+                    Dentro de lo establecido en la Ordenanza N°1762-2013-MML y su modificatoria Ordenanza
+                    N°2363-2021-MML,
+                    se
+                    describen los requisitos y el procedimiento para el reconocimiento de las organizaciones
+                    sociales y
+                    sus
+                    representantes, así como los actos que realicen con posterioridad a su inscripción.
+                </p>
+            </article>
+        </main>
+
+        <aside class="derchaPrincipal">
+            <div id="imgRuosWhat">
+
+            </div>
+        </aside>
+
+
+
+
+        <!-- <br> <br>
+                    
+                    <div class="row">
+                        <h2 class="thin">¿Que es el RUOS?</h2>
+                        <div class="card text-justify col-6">
+                            <div class="card-body">
+                                <p class="text-muted">
+                                    El Registro Único de Organizaciones sociales –RUOS, es el sistema y proceso de
+                                    reconocimiento y
+                                    registro, a
+                                    cargo de las municipalidades distritales de la provincia de Lima y de la Municipalidad
+                                    Metropolitana
+                                    de
+                                    Lima, en
+                                    sus respectivos niveles, de las organizaciones sociales ubicadas al interior de sus
+                                    jurisdicciones.
+    
+                                    Dentro de lo establecido en la Ordenanza N°1762-2013-MML y su modificatoria Ordenanza
+                                    N°2363-2021-MML,
+                                    se
+                                    describen los requisitos y el procedimiento para el reconocimiento de las organizaciones
+                                    sociales y
+                                    sus
+                                    representantes, así como los actos que realicen con posterioridad a su inscripción.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <aside id="imgRuosWhat">
+    
+                            </aside>
+                        </div>
+                    </div>
+                    <br> -->
+    </div>
+
+
+    <div class="espacio-principal mt-3">
+        <div class="jumbotron top-space">
+            <div class="container">
+                <h2 class="text-center thin"> REQUISITOS</h2>
+                <p class="text-muted text-center">DESCUBRE LOS DOCUMENTOS NECESARIOS PARA EL REGISTRO DE TU
+                    ORGANZIACION
+                    SOCIAL
+                </p>
+                <div class="card">
+                    <div class="card-body">
+
+                        <table class="miTablaGeneral tablaCursorPrimeraTabla">
+                            <thead class="tableCabezera">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombre del Formato</th>
+                                    <th scope="col">Modelo de Formato</th>
+                                    <th scope="col">Modelo a Rellenar</th>
+                                </tr>
+                            </thead>
+                            <tbody class="miTablaGeneralDividir">
+                                <tr *ngFor="let requisito of requisito; let i = index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ requisito.nombreRequisito }}</td>
+                                    <td>
+                                        <i class="fa-solid fa-file-pdf"
+                                            (click)="requisitoPdf(requisito.requisitoDocPdf)" 
+                                            style="color: red;">
+                                        </i>
+                                    </td>
+                                    <td>
+                                        <i class="fa-solid fa-file-word"
+                                            (click)="requisitoWord(requisito.requisitoDocWord)"
+                                            style="color: blue;">
+                                        </i>
+                                    </td>
+                                </tr>
+                                <!--  <tr>
+                                    <th scope="row">2</th>
+                                    <td>SOLICITUD PARA ACTUALIZACION DE ORGANZIACION</td>
+                                    <td><i class="fa-solid fa-file-pdf"></i></td>
+                                    <td><i class="fa-solid fa-file-word"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>ACTA ELECCION DEL ORGANO DIRECTIVO</td>
+                                    <td><i class="fa-solid fa-file-pdf"></i></td>
+                                    <td><i class="fa-solid fa-file-word"></i></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="espacio-principal">
+        <div class="container  top-space ">
+            <br> <br>
+            <h2 class="thin text-center">RESOLUCIONES</h2>
+            <div class="row central">
+                <div class="col-3">
+                    <label for="busquedaTipo">BUSQUEDA POR TIPO: </label>
+                    <select class="form-select" aria-label="Default select example" name="busquedaTipo">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label for="busquedaAño">BUSQUEDA POR AÑO: </label>
+                    <input type="text" class="miImputGeneral">
+                </div>
+                <div class="col-3">
+                    <label for="busquedaZona">BUSQUEDA POR Zona: </label>
+                    <select class="form-select" aria-label="Default select example" name="busquedaZona">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="col-3 text-center">
+                    <label for="btnBuscar">Precione el boton para Filtrar: </label>
+                    <button type="button" class="btn btn-success" name="btnBuscar">Buscar</button>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table tableBorde border-success tablaCursor ">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre del Formato</th>
+                                <th scope="col">Modelo de Formato</th>
+                                <th scope="col">Modelo a Rellenar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>SOLICITUD PARA REGISTRO NUEVO DE ORGANZIACION</td>
+                                <td><i class="fa-solid fa-file-pdf"></i></td>
+                                <td><i class="fa-solid fa-file-word"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>SOLICITUD PARA ACTUALIZACION DE ORGANZIACION</td>
+                                <td><i class="fa-solid fa-file-pdf"></i></td>
+                                <td><i class="fa-solid fa-file-word"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>ACTA ELECCION DEL ORGANO DIRECTIVO</td>
+                                <td><i class="fa-solid fa-file-pdf"></i></td>
+                                <td><i class="fa-solid fa-file-word"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+</div>
+<!--     </div>
+    
+    </div> -->
+<!-- </body> -->

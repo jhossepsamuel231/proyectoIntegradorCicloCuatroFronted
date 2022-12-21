@@ -1,0 +1,35 @@
+.content {
+    background: rgba(158, 155, 155, 0.096);
+}
+
+.titulo1 {
+    text-align: center;
+    margin: 7%;
+    color: rgba(36, 34, 34, 0.568);
+}
+
+.contecajas {
+    margin: 5%;
+}
+
+.cajas {
+    width: 40%;
+}
+
+.nombreorgcaja {
+    width: 61%;
+    margin-left: 3%;
+    border-radius: 7px;
+}
+
+.ph-orgname {
+    width: 37%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+.ph-orgname::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 50%;
+    /* Centrado vertical */
+}

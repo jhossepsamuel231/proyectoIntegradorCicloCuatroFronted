@@ -1,0 +1,89 @@
+
+.content {
+    background: rgba(158, 155, 155, 0.096);
+}
+
+.titulo1 {
+    text-align: center;
+    margin: 4%;
+    color: rgba(36, 34, 34, 0.568);
+
+}.parte2 {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.cajasarriba {
+    width: 30%;
+}
+
+.ph-orgname {
+    width: 60%;
+    margin-left: 1%;
+}
+
+.ph-orgname::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+    /* Centrado vertical */
+}
+
+.cajasabajo {
+    width:15%;
+    margin: 1%;
+}
+
+.tip {   
+    margin: 1%;
+    width: 40%;
+    text-align: center;
+}
+
+.tabla {
+    background: white;
+    border-radius: 20px;
+}
+
+.cabezeratable {
+    background-color: #198754b7;
+    text-align: center;
+    line-height: 1rem;
+    /* Centrado vertical */
+}
+
+.letracabe {
+    color: white;
+}
+
+.logedi {
+    color: rgb(22, 22, 150);
+}
+
+.logdel {
+    color: rgb(189, 27, 27);
+}
+
+.btngene {
+    background-color: #198754b7;
+    color: white;
+}
+
+.cajasdata {
+    width: 17%;
+}
+
+.ph-cajasdata {
+    width: 37%;
+    margin-left: 1%;
+}
+
+.ph-cajasdata::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+    /* Centrado vertical */
+}
+
+.cargo {
+    width: 36.5%;
+    text-align: center;
+}

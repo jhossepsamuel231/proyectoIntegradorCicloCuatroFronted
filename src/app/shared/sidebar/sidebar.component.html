@@ -1,0 +1,85 @@
+<!-- Top Bar End -->
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <div class="slimscroll-menu" id="remove-scroll">
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu" id="side-menu">
+                <li class="menu-title">Menu</li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> RUOS
+                            <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span>
+                        </span>
+                    </a>
+
+                    <!-- ususario -->
+                    <ul class="submenu" *ngIf="usuario.rol=='ADMIN_ROLE' || usuario.rol=='USER_ROLE'">
+                        <li><a routerLink="solictud-agregar-organizacion" routerLinkActive="active-link">Registrar
+                                Organizacion</a></li>
+                        <li><a routerLink="solictud-actualizar-organizacion" routerLinkActive="active-link">Actualizar
+                                Organizacion</a>
+                        </li>
+                        <li><a routerLink="ver-estado-solicitud" routerLinkActive="active-link">Ver Estado Solicitud</a>
+                        </li>
+                        <li><a routerLink="lista-solicitudes" routerLinkActive="active-link">Ver Mis Solicitudes</a>
+                        </li>
+                        <li><a routerLink="lista-notificaciones" routerLinkActive="active-link">Ver Mis
+                                Notificaciones</a>
+                        </li>
+                        <li><a routerLink="informacion-organizacion" routerLinkActive="active-link">Ver Mi
+                                Organizacion</a>
+                        </li>
+                    </ul>
+
+                    <!-- Mesa de parte -->
+                    <ul class="submenu" *ngIf="usuario.rol=='ADMIN_ROLE' || usuario.rol=='MESA_PARTE_ROLE'">
+                        <li><a routerLink="generar-expediente" routerLinkActive="active-link">Generar Expediente</a>
+                        </li>
+                        <li><a routerLink="lista-expediente" routerLinkActive="active-link">Ver Expediente</a></li>
+                    </ul>
+
+                    <!-- Gerencia de Desarrollo -->
+                    <ul class="submenu" *ngIf="usuario.rol=='ADMIN_ROLE' || usuario.rol=='GERENCIA_ROLE'">
+                        <li><a routerLink="ver-expedientes" routerLinkActive="active-link">Ver Expedientes</a></li>
+                        <li><a routerLink="informes-tecnicos" routerLinkActive="active-link">Informe Tecnicos</a></li>
+                        <li><a routerLink="registrar-resolucion" routerLinkActive="active-link">Registrar Resolucion</a>
+                        </li>
+                        <li><a routerLink="enviar-notificacion" routerLinkActive="active-link">Enviar Notificacion</a>
+                        </li>
+                    </ul>
+
+                    <!-- Sub Gerencia -->
+                    <ul class="submenu" *ngIf="usuario.rol=='ADMIN_ROLE' || usuario.rol=='SUB_GERENCIA_ROLE'">
+                        <li><a routerLink="lista-expedientes" routerLinkActive="active-link">Ver Expediente</a></li>
+                        <li><a routerLink="registrar-informe-tecnico" routerLinkActive="active-link">Registrar Informe
+                                Tecnico</a></li>
+                    </ul>
+
+                    <!-- Admin -->
+                    <ul class="submenu" *ngIf="usuario.rol=='ADMIN_ROLE'">
+                        <li><a routerLink="asignar-nuevo-requisito" routerLinkActive="active-link">Asignar Nuevo
+                                Requisito</a>
+                        </li>
+                        <li><a routerLink="lista-usuarios" routerLinkActive="active-link">Lista de Usuarios</a>
+                        </li>
+                        <li><a routerLink="registrar-privilegios" routerLinkActive="active-link">Registrar
+                                Privilegios</a>
+                        </li>
+                        <li><a routerLink="registrar-tipo-empleado" routerLinkActive="active-link">Registrar
+                                Empleado</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+
+
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+        <div class="clearfix"></div>
+    </div>
+    <!-- Sidebar -left -->
+</div>

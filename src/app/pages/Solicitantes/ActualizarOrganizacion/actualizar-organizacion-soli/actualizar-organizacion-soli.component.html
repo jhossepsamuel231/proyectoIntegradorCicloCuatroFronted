@@ -1,0 +1,139 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="general"> <br>
+
+                <h1 class="titulo1">ACTUALIZACIÓN DE ORGANIZACIÓN</h1>
+
+                <h5 class="titulo2">DATOS VIGENTES DE LA ORGANIZACIÓN:</h5>
+
+                <div class="datapersona ">
+                    <div class="row g-2 ">
+                        <div class="col-12">
+                            <div class="p-2  d-block justify-content-center">
+                                <div class="cajadataorg d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasorg p-1 form-label  ">
+                                        Nombre de la Organización:
+                                    </label>
+                                    <input type="text" class="ph-cajasorg m-1" id="exampleFormControlInput1"
+                                        placeholder="Nombre de la Organización social" disabled
+                                        [(ngModel)]=" verificar.nombreOrganizacion">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasorg p-1 form-label  ">
+                                        Tipo de Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-cajasorg m-1" id="exampleFormControlInput1"
+                                        placeholder="Tipo de la Organización Social" disabled
+                                        [(ngModel)]=" verificar.tipoOrganizacion.tipoOrganizacionSocial">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasorg p-1 form-label  ">
+                                        Nivel de Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-cajasorg m-1" id="exampleFormControlInput1"
+                                        placeholder="Nivel de la Organización Social" disabled
+                                        [(ngModel)]=" verificar.nivelOrganizacionSocial.nivelOrganizacionSocial">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasorg p-1 form-label  ">
+                                        Zona de Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-cajasorg m-1" id="exampleFormControlInput1"
+                                        placeholder="Zona de la Organización Social" disabled
+                                        [(ngModel)]="verificar.zonaUbicacion.zonaUbicacion">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasorg p-1 form-label  ">
+                                        Dirección de Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-cajasorg m-1" id="exampleFormControlInput1"
+                                        placeholder="Dirección de la Organización Social" disabled
+                                        [(ngModel)]=" verificar.direccionSolicitud">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h5 class="titulo2">ACTUALIZAR DATOS DE LA ORGANIZACIÓN:</h5>
+
+                    <div class="contecajas ">
+                        <div class="row g-2 d-block">
+                            <div class="parte1 ">
+                                <div class="part1 col-12 d-flex justify-content-star ">
+                                    <label for="exampleFormControlInput1" class="cajasarriba p-1 form-label ">
+                                        Nombre de la Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-orgname m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el nombre de su Organización Social"
+                                        [(ngModel)]="registrarSolcitud.nombreOrganizacion">
+                                </div>
+                                <div class="part1 col-12 d-flex justify-content-star">
+                                    <label for="exampleFormControlInput1" class="cajasarriba p-1 form-label ">
+                                        Dirección de la Organización Social:
+                                    </label>
+                                    <input type="text" class="ph-orgname m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese la dirección de su Organización Social"
+                                        [(ngModel)]="registrarSolcitud.direccionSolicitud">
+                                </div>
+                            </div>
+
+                            <div class="parte2 col-12">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-4  p-2 d-flex justify-content-center">
+                                        <label for="exampleFormControlInput1" class="cajasabajo p-2 form-label">
+                                            Tipo:
+                                        </label>
+                                        <select class="tip form-select rounded-pill m-2"
+                                            aria-label="Default select example"
+                                            (change)="handleTipoOrganizacion($event)">
+                                            <option value="0" selected> Seleccionar Tipo Organizacion </option>
+                                            <option *ngFor="let tipoOrganizacion of tipoOrganizacionSocial"
+                                                value="{{ tipoOrganizacion.idTipoOrganizacionSocial }}"> {{
+                                                tipoOrganizacion.tipoOrganizacionSocial }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4  p-2 d-flex justify-content-center">
+                                        <label for="exampleFormControlInput1" class="cajasabajo p-2 form-label">
+                                            Nivel:
+                                        </label>
+                                        <select class="tip form-select rounded-pill m-2"
+                                            aria-label="Default select example"
+                                            (change)="handleNivelOrganizacion($event)">
+                                            <option value="0" selected> Seleccionar Opcion </option>
+                                            <option *ngFor="let nivelOrganizacion of nivelOrganizacionSocial"
+                                                value="{{ nivelOrganizacion.idNivelOrganizacionSocial }}"> {{
+                                                nivelOrganizacion.nivelOrganizacionSocial }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4  p-2 d-flex justify-content-center">
+                                        <label for="exampleFormControlInput1" class="cajasabajo p-2 form-label">
+                                            Zona:
+                                        </label>
+                                        <select class="tip form-select rounded-pill m-2"
+                                            aria-label="Default select example" (change)="handleZonaUbicacion($event)">
+                                            <option value="0" selected> Seleccionar Opcion </option>
+                                            <option *ngFor="let zonaUbicacion of zonaUbicacion"
+                                                value="{{ zonaUbicacion.idZonaUbicacion }}"> {{
+                                                zonaUbicacion.zonaUbicacion }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="btngen d-flex justify-content-center">
+                        <button type="button" class="btngene btn btn m-4"
+                            (click)="registrarSolicitudActualizar()">REGISTRAR</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>

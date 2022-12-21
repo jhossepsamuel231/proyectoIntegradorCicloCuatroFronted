@@ -1,0 +1,164 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="general"><br>
+                <h1 class="titulo1">INFORMES TÉCNICOS</h1>
+
+                <div class="buscadores d-flex justify-content-center">
+                    <div class=" buscadorge row g-2 d-block justify-content-center">
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-8 ">
+                                        <label for="exampleFormControlInput1" class="name form-label">N° Informe
+                                            Técnico:
+                                        </label>
+                                        <input type="number" class="ph-orgname" id="exampleFormControlInput1"
+                                            placeholder="Ingrese el N° Informe Técnico">
+                                    </div>
+                                    <div class="col-4 ">
+                                        <button type="button" class="bus btn btn">BUSCAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-6 ">
+                                        <label for="exampleFormControlInput1"
+                                            class="zonlb form-label m-3">Zonas:</label>
+                                        <select class="zon form-select rounded-pill"
+                                            aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <label for="exampleFormControlInput1" class="form-label m-3">Resultado:</label>
+                                        <select class="zon form-select rounded-pill"
+                                            aria-label="Default select example">
+                                            <option selected></option>
+                                            <option value="1">Aceptado</option>
+                                            <option value="2">Rechazado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="tabla table shadow">
+                    <thead class="cabezeratable">
+                        <tr>
+                            <th class="letracabe" scope="col"></th>
+                            <th class="letracabe" scope="col">N° INFORME TÉCNICO</th>
+                            <th class="letracabe" scope="col">NOMBRE DE LA ORGANIZACIÓN</th>
+                            <th class="letracabe" scope="col">ZONA</th>
+                            <th class="letracabe" scope="col">FECHA EMISIÓN</th>
+                            <th class="letracabe" scope="col">RESULTADO</th>
+                            <th class="letracabe" scope="col">PDF INFORME</th>
+                            <th class="letracabe" scope="col">ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cuerpo">
+                        <tr *ngFor="let informeTecnico of informeTecnicos; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ informeTecnico.codigoInformeTecnico}}</td>
+                            <td>{{ informeTecnico.solicitud.nombreOrganizacion}}</td>
+                            <td>{{ informeTecnico.solicitud.zonaUbicacion.zonaUbicacion}}</td>
+                            <td>{{ informeTecnico.fechaEmision | date :'dd/MM/YYYY'}}</td>
+                            <td>{{ informeTecnico.resultado}}</td>
+                            <i class="fa-solid fa-file-pdf imgfile"
+                                (click)="verInformeTecnico(informeTecnico.docInformeTecnico)" style="color: red;">
+                            </i>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2"
+                                        (click)="guardarIdParaRegistrarResolucion(informeTecnico.idInformeTecnico, informeTecnico.solicitud.idSolicitud)">SUBIR
+                                        RESOLUCIÓN</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td><i class="imgfile fa-solid fa-file"></i></td>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2">SUBIR RESOLUCIÓN</button>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td><i class="imgfile fa-solid fa-file"></i></td>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2">SUBIR RESOLUCIÓN</button>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td><i class="imgfile fa-solid fa-file"></i></td>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2">SUBIR RESOLUCIÓN</button>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td><i class="imgfile fa-solid fa-file"></i></td>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2">SUBIR RESOLUCIÓN</button>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                            <td><i class="imgfile fa-solid fa-file"></i></td>
+                            <td>
+                                <div class="btngen">
+                                    <button type="button" class="btngene btn btn m-2">SUBIR RESOLUCIÓN</button>
+                                </div>  
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,246 @@
+<!-- <app-header></app-header>
+<app-sidebar></app-sidebar> -->
+
+<body>
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="page-title-box">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <h4 class="page-title">Dashboard</h4>
+                        </div>
+                        <!-- 
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-right">
+                            <li class="breadcrumb-item"><a href="#">Sigry-Smuc</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div> -->
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-file mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <a (click)="uno()">
+                                    <p class="parrafoCajaLogo">Registrar Organizacion</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-arrows-spin mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <a (click)="dos()">
+                                    <p class="parrafoCajaLogo">Actualziar Organizacion</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-circle-check" style="font-size: 8rem;"></i>
+                                </div>
+                                <a (click)="tres()">
+                                    <p class="parrafoCajaLogo">Ver Estado Solicitud</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button  class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-list-ul" style="font-size: 8rem;"></i>
+                                </div>
+                                <a (click)="cuatro()">
+                                    <p class="parrafoCajaLogo">Ver Mis Solicitudes</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-envelope" style="font-size: 8rem;"></i>
+                                </div>
+                                <a (click)="cinco()">
+                                    <p class="parrafoCajaLogo">Ver Mis Notificaciones</p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='USER_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-sitemap" style="font-size: 8rem;"></i>
+                                </div>
+                                <a routerLink="admin-panel/informacion-organizacion" routerLinkActive="active-link">
+                                    <p class="parrafoCajaLogo"> Ver Mi Organizacion Organizacion </p>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mesa de Partes -->
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='MESA_PARTE_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-file mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Generar Expediente</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='MESA_PARTE_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-folder-open mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Ver Expedientes</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--   Gerencia de Desarrollo Social -->
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-file-invoice mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Ver Expedientes</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-file-lines mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Informes Tecnicos</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-file-pen mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Registrar Resoluciones</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4" *ngIf="usuario.rol=='GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-solid fa-envelope mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Enviar Notificaciones</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- sub Gerencia -->
+
+                    <div class="col-sm-8 col-xl-4"
+                        *ngIf="usuario.rol=='SUB_GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-folder-open mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Ver Expedientes</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4"
+                        *ngIf="usuario.rol=='SUB_GERENCIA_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-paste mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Registrar Informe Tecnico</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- admin -->
+                    <div class="col-sm-8 col-xl-4"
+                        *ngIf="usuario.rol=='ADMIN_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-paste mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Ver Usuarios</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4"
+                        *ngIf="usuario.rol=='ADMIN_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-paste mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Ver Organizacion</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-4"
+                        *ngIf="usuario.rol=='ADMIN_ROLE'">
+                        <div class="card">
+                            <button class="botonesVistaLog">
+                                <div class="cajaLogo">
+                                    <i class="fa-regular fa-paste mt-1" style="font-size: 8rem;"></i>
+                                </div>
+                                <p class="parrafoCajaLogo">Registrar Requisitos</p>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- container-fluid -->
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+
+</body>

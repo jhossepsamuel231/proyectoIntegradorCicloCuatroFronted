@@ -1,0 +1,139 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="general"> <br>
+
+                <h1 class="titulo1">REGISTRAR INFORME TÉCNICO</h1>
+
+                <!-- <div class="contenidoBusca">
+                    <div class="row g-1 m-3">
+                        <div class="col-6">
+                            <label for="exampleFormControlInput1" class="name form-label">N° Expediente:
+                            </label>
+                            <input type="text" class="ph-orgname" id="exampleFormControlInput1"
+                                placeholder="Ingrese el N° Expediente">
+                        </div>
+                        <div class="col-6 ">
+                            <button type="button" class="bus btn btn">SELECCIONAR</button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="contenidoBusca">
+                    <div class="row g-1 m-3">
+                        <div class="col-6 d-flex justify-content-star">
+                            <label for="exampleFormControlInput1" class="name form-label">RESULTADO:
+                            </label>
+                            <div class="result">
+                                <div class="form-check form-check-inline">
+
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1" (click)="resultadoAceptado()">
+
+                                    <label class="form-check-label" for="inlineRadio1">Aprobado</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2" (click)="resultadoRechazado()">
+
+                                    <label class="form-check-label" for="inlineRadio2">Desaprobado</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cuadroscabeza">
+
+                    <div class="cuadross m-3">
+                        <div class="row g-2">
+
+                            <div class="col-8">
+                                <div class="cuadro1 shadow-lg d-block justify-content-center">
+                                    <div class="parte1a p-1">
+                                        <label for="exampleFormControlInput1" class="enca form-label">
+                                            ASUNTO : REGISTRO DEL INFORME TÉCNICO
+                                        </label>
+                                    </div>
+                                    <div class="parte2a p-1">
+                                        <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
+                                            placeholder="Ingrese una breve descripción sobre el informe técnico"
+                                            [(ngModel)]="informeTecnicoDto.descripcion">
+                                    </div>
+                                    <div class="parte3a p-1 d-flex justify-content-star">
+                                        <div class="arch">
+                                            <input type="file" class="adj" (change)="seleccionarFile($event)"
+                                                accept=".pdf">
+                                        </div>
+                                        <label for="exampleFormControlInput1" class="aba form-label">
+                                            ADJUNTAR INFORME TÉCNICO
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="cuadro2 shadow-lg d-block justify-content-center">
+                                    <div class="parte1b border">
+                                        <label for="exampleFormControlInput1" class="enca2 form-label">
+                                            ORGANIZACIÓN SELECCIONADA
+                                        </label>
+                                    </div>
+                                    <div class="parte2b d-block justify-content-star">
+
+                                        <div class="container">
+                                            <div class=" cajas row g-2  d-flex justify-content-star">
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        NOMBRE:
+                                                    </label>
+                                                    <input type="text" class="nombrecaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="solicitud.nombreOrganizacion">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        CÓDIGO:
+                                                    </label>
+                                                    <input type="text" class="nombrecaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="solicitud.codigoSolicitud">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        TIPO:
+                                                    </label>
+                                                    <input type="text" class="resultadocaj form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [(ngModel)]="solicitud.tipoSolicitud.nombreTipoSolicitud">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="exampleFormControlInput1" class="enca2 form-label">
+                                                        FECHA SOLICITUD:
+                                                    </label>
+                                                    <input type="text" class="fechacaja form-label shadow-sm"
+                                                        id="exampleFormControlInput1" placeholder=" " disabled
+                                                        [ngModel]="solicitud.fechaRegistro |  date:'dd/MM/yyyy'">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="parte3b"></div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="subreso btn btn" (click)="registrarInformeTecnico()">ENVIAR
+                                INFORME TÉCNICO</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

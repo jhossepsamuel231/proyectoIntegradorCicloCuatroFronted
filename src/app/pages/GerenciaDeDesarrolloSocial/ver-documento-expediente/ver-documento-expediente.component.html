@@ -1,0 +1,110 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="general"><br>
+                <h1 class="titulo1">DOCUMENTOS DE LA SOLICITUD</h1>
+                <div class="accion d-block justify-content-center">
+
+                    <button type="button" class="btnrechazo btn btn ml-5" (click)="rechazarSolicitud()"
+                        style="width: 30%;">Rechazar</button>
+
+                    <button type="button" class="btnderivar btn btn ml-3" (click)="aceptarSolicitudASubGerencia()"
+                        style="width: 30%;">Aceptar</button>
+
+                </div>
+                <div class="tab d-flex justify-content-center m-3">
+                    <table class="tabla table shadow">
+                        <thead class="cabezeratable">
+                            <tr>
+                                <th class="letracabe" scope="col">N° DOCUMENTO</th>
+                                <th class="letracabe" scope="col">NOMBRE DE DOCUMENTO</th>
+                                <th class="letracabe" scope="col">ADJUNTABLE DE DOCUMENTO</th>
+                            </tr>
+                        </thead>
+                        <tbody class="cuerpo">
+                            <tr *ngFor="let documento of documento; let i = index">
+                                <th scope="row">{{ i + 1 }}</th>
+                                <td class="texto">{{ documento.requisitoDocumento.nombreRequisito }}</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <th scope="row" class="texto">2</th>
+                                <td class="texto">ACTA DE FUNDACIÓN O CONSTITUCIÓN</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">3</th>
+                                <td class="texto">ESTATUTO Y ACTA DE APROBACIÓN</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">4</th>
+                                <td class="texto">ACTA DE ELECCIÓN DEL ÓRGANO DIRECTIVO</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">5</th>
+                                <td class="texto">NÓMINA DE LOS MIEMBROS DEL ÓRGANO DIRECTIVO</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">6</th>
+                                <td class="texto">NÓMINA DE LOS MIEMBROS DE LA ORGANIZACIÓN SOCIAL</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">7</th>
+                                <td class="texto">PLANO O CROQUIS REFERENCIAL DE LA UBICACIÓN DEL
+                                    LOCAL O DOMICILIO INSTITUCIONAL DE LA ORGANIZACIÓN</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">8</th>
+                                <td class="texto">PLANO O CROQUIS DEL RADIO DE ACCIÓN DE LA
+                                    ORGANIZACIÓN</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">9</th>
+                                <td class="texto">DOCUMENTO (EXCEL) DE DATOS DE TODOS LOS MIEMBROS DE LA
+                                    ORGANIZACIÓN SOLICITANTE</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="texto">10</th>
+                                <td class="texto">OTRO ACERVO DOCUMENTAL, GRÁFICO Y FUENTES DE REGISTRO
+                                    QUE EVIDENCIA LA EXISTENCIA DE HECHO, EL HISTORIAL Y
+                                    ANTECEDENTES DE LA ORGANIZACIÓN</td>
+                                <td class="texto">
+                                    <i class="doc fa-solid fa-file-pdf"></i>
+                                </td>
+
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+.content{
+    background: rgba(158, 155, 155, 0.096);
+}
+.titulo1 {
+    text-align: center;
+    margin: 3%;
+    color: rgba(36, 34, 34, 0.568);
+    
+}
+.contenidoBusca{
+    margin: 3%;
+}
+.name {
+    margin-left: 4%;
+}
+.ph-orgname {
+    width: 50%;
+    margin-left: 5px;
+}
+.ph-orgname::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;/* Centrado vertical */
+}
+.bus {
+    margin-left: 25%;
+    border-radius: 5px;
+    background-color: #198754b7;
+    color: white;
+}
+.buscadores{
+    border: 1px;
+    border-color: black;
+}
+.cuadro1{
+    border-radius: 10px;
+    height: 100%;
+    width: 90%;
+    margin-left: 3%;
+}
+.parte1a{
+    height: 15%;
+    background-color: #198754b7;
+    color: aliceblue;
+    border-radius: 2%;
+    text-align: center;
+}
+.enca{
+    line-height:40px;
+}
+.parte2a{
+    height: 90%;
+    background-color: whitesmoke; 
+}
+.parte3a{
+    height: 20%;
+    background-color: #198754b7;
+    color: whitesmoke; 
+    border-radius: 2%;
+    padding-left: 3%;
+}
+.adj{
+    margin-top: 6%;
+    width: 148px;
+    padding-left: 3%;
+}
+.aba{
+    line-height:45px;
+    padding-left: 2%;
+}
+.iconclip{
+    line-height:45px; 
+    padding-left: 2%;
+}
+.ph-ingtext{
+    width: 99%;
+    height: 99%;
+    margin-left: 0.5%;
+    text-align: center;
+    line-height: 10%;/* Centrado vertical */
+    border-radius: 2%;
+    border-color: rgba(87, 85, 85, 0.096);
+}
+.cuadro2{
+    margin-top: 5%;
+    height: 105%;
+    border-radius: 10px;
+}
+.parte1b{
+    width: 100%;
+    height: 15%;
+    background-color: #198754b7;
+    color:whitesmoke;
+    text-align: center;
+    border-radius: 2%;
+}
+.enca2{
+    line-height:40px;
+}
+.parte2b{
+    width: 100%;
+    height: 72%;
+    background: rgba(255, 255, 255, 0.705);
+}
+
+.parte2a1{
+    height: 30%;
+    background-color: whitesmoke; 
+}
+.parte2a2{
+    height: 60%;
+    background-color: whitesmoke; 
+}
+
+.parte3b{
+    background-color: #198754b7;
+    width: 100%;
+    height: 13%;
+    border-radius: 2%;
+}
+.subreso {
+    margin-left: 40%;
+    margin-top: 11%;
+    border-radius: 5px;
+    background-color: #198754b7;
+    color: white;
+    
+}
+.nombrecaja{
+    margin-left:2%;
+    width: 70%;
+    border-radius: 5px;
+}
+
+.codigoCaja{
+    margin-left:2%;
+    width: 76%;
+    border-radius: 5px;
+}
+
+.resultadocaja{
+    margin-left:4%;
+    width: 65%;
+    border-radius: 5px;
+}
+.fechacaja{
+    margin-left:4%;
+    width: 50%;
+    border-radius: 5px;
+}
+.cajas{
+    padding-top: 7%;
+}
+.adj{
+    margin-top: 6%;
+    width: 148px;
+    padding-left: 3%;
+    cursor: pointer;
+}

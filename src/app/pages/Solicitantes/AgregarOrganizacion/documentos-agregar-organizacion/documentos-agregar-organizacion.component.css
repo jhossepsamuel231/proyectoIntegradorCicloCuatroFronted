@@ -1,0 +1,41 @@
+.content {
+    background: rgba(158, 155, 155, 0.096);
+  }
+  
+  .titulo1 {
+    text-align: center;
+    margin: 4%;
+    color: rgba(36, 34, 34, 0.568);
+  
+  }
+  .aa{
+    background-color: #217a5193;
+    width: 80%;
+    border-radius: 10px;
+  }
+  .cuadro1{
+    margin-left: 15%;
+  }
+  .btngene {
+    background-color: #198754b7;
+    color: white;
+    height: 23%;
+  }
+  .cuadros{
+    width: 100%;
+  }
+  .cajasarriba{
+    margin-left: 3%;
+    margin-right:2%;
+    line-height: 290%;
+    color: white;
+    width: 75%;
+  }
+  .btngenel{
+    background-color: #198754b7;
+    color: white;
+  }
+  .but{
+    align-items: center;
+  }
+ 

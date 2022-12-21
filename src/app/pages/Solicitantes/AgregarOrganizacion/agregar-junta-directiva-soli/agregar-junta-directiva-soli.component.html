@@ -1,0 +1,187 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+
+            <div class="general"> <br>
+
+                <h1 class="titulo1">AGREGAR MIEMBROS DE JUNTA DIRECTIVA</h1>
+
+                <div class="datapersona">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="p-3  d-block justify-content-center">
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Nombres Completos:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese Nombre Completo del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.nombrePersona">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Apellido Paterno:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el Apellido Paterno del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.apellidoPaterno">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Apellido Materno:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el Apellido Materno del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.apellidoMaterno">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        DNI:
+                                    </label>
+                                    <input type="number" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el DNI del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.dni">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Dirección:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese la Dirección del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.domicilio">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Telefono:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el Telefono del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.telefono">
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Cargo:
+                                    </label>
+                                    <select class="cargo form-select rounded-pill m-2 "
+                                        aria-label="Default select example"
+                                        placeholder="Seleccione el Cargo del miembro de junta"
+                                        (change)="handleZonaUbicacion($event)">
+                                        <option value="0" selected> Seleccionar Opcion </option>
+                                        <option *ngFor="let cargoJunta of cargoJunta"
+                                            value="{{ cargoJunta.idCargoJunta }}"> {{
+                                            cargoJunta.cargoJunta }}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="caja1 d-flex justify-content-center">
+                                    <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
+                                        Correo:
+                                    </label>
+                                    <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
+                                        placeholder="Ingrese el Correo Electronico del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.correo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btngen d-flex justify-content-center">
+                        <button type="button" class="btngene btn btn m-5"
+                            (click)="addJuntaDirectiva()">REGISTRAR</button>
+                    </div>
+
+                </div>
+
+
+                <table class="tabla table shadow">
+                    <thead class="cabezeratable">
+                        <tr>
+                            <th class="letracabe" scope="col">#</th>
+                            <th class="letracabe" scope="col">NOMBRES</th>
+                            <th class="letracabe" scope="col">APELLIDO PATERNO</th>
+                            <th class="letracabe" scope="col">APELLIDO MATERNO</th>
+                            <th class="letracabe" scope="col">DNI</th>
+                            <th class="letracabe" scope="col">DIRECCIÓN</th>
+                            <th class="letracabe" scope="col">TELEFONO</th>
+                            <th class="letracabe" scope="col">CARGO</th>
+                            <th class="letracabe" scope="col">CORREO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="cuerpo">
+                        <tr *ngFor="let juntaDirectivas of juntaDirectiva; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td class="rell">{{ juntaDirectivas.persona.nombrePersona }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.apellidoPaterno }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.apellidoMaterno }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.dni }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.domicilio }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.telefono }}</td>
+                            <td class="rell">{{ juntaDirectivas.cargoJunta.cargoJunta }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.correo }}</td>
+                        </tr>
+                        <!-- <tr>
+                            <th scope="row">2</th>
+                            <td class="rell">Mark Jose</td>
+                            <td class="rell">Peréz</td>
+                            <td class="rell">Ordoñez</td>
+                            <td class="rell">93883928</td>
+                            <td class="rell">Av. Los Cisnes 763</td>
+                            <td class="rell">933849303</td>
+                            <td class="rell">Presidente</td>
+                            <td class="rell">markjose123@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td class="rell">Mark Jose</td>
+                            <td class="rell">Peréz</td>
+                            <td class="rell">Ordoñez</td>
+                            <td class="rell">93883928</td>
+                            <td class="rell">Av. Los Cisnes 763</td>
+                            <td class="rell">933849303</td>
+                            <td class="rell">Presidente</td>
+                            <td class="rell">markjose123@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td class="rell">Mark Jose</td>
+                            <td class="rell">Peréz</td>
+                            <td class="rell">Ordoñez</td>
+                            <td class="rell">93883928</td>
+                            <td class="rell">Av. Los Cisnes 763</td>
+                            <td class="rell">933849303</td>
+                            <td class="rell">Presidente</td>
+                            <td class="rell">markjose123@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td class="rell">Mark Jose</td>
+                            <td class="rell">Peréz</td>
+                            <td class="rell">Ordoñez</td>
+                            <td class="rell">93883928</td>
+                            <td class="rell">Av. Los Cisnes 763</td>
+                            <td class="rell">933849303</td>
+                            <td class="rell">Presidente</td>
+                            <td class="rell">markjose123@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td class="rell">Mark Jose</td>
+                            <td class="rell">Peréz</td>
+                            <td class="rell">Ordoñez</td>
+                            <td class="rell">93883928</td>
+                            <td class="rell">Av. Los Cisnes 763</td>
+                            <td class="rell">933849303</td>
+                            <td class="rell">Presidente</td>
+                            <td class="rell">markjose123@gmail.com</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+                <div class="btngen d-flex justify-content-center">
+                    <button (click)="siguiente()" type="button" class="btngene btn btn m-4">ADJUNTAR DOCUMENTOS</button>
+                </div>
+
+            </div>
+        </div>
+    </div>

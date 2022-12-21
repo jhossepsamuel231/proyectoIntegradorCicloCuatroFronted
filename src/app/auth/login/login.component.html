@@ -1,0 +1,37 @@
+<!-- <app-panel-principal></app-panel-principal> -->
+<div class="fondoImgLogin">
+    <div class="contenidoLogin">
+        <h1 class="login_titulo">Iniciar Sesion</h1>
+        <form action="" class="logearse">
+            <div class="contenedor-inputs">
+                <input type="number" name="user" required autocomplete="off" [(ngModel)]="usuario.username">
+                <span></span>
+                <label for="">DNI: </label>
+            </div>
+            <div class="contenedor-inputs">
+                <input type="password" name="pass" required [(ngModel)]="usuario.password">
+                <span></span>
+                <label for="">Contraseña: </label>
+            </div>
+            <div class="olvidoContrasenia">Has olvidado tu contraseña?</div>
+            <input type="submit" value="login" (click)="iniciarSesion()">
+            <div class="crearCuenta">
+                No tienes usuario? <a (click)="registrarSolicitud()">Crear Cuenta</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--     <div class="content_login">
+    <h1>Login</h1>
+    <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Ingrese su username" type="text" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="Ingrese su contraseña" type="password" [(ngModel)]="usuario.password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" >Iniciar Sesión</button>
+</div> -->

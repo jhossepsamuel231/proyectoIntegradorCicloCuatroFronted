@@ -1,0 +1,83 @@
+.content {
+    background: rgba(158, 155, 155, 0.096);
+}
+
+.titulo1 {
+    text-align: center;
+    margin: 6%;
+    color: rgba(36, 34, 34, 0.568);
+
+}
+
+.titulo2 {
+    text-align: start;
+    margin-left: 9%;
+    margin-bottom: 4%;
+    color: rgba(36, 34, 34, 0.568);
+
+}
+
+.contecajas {
+    margin: 4%;
+}
+
+.part1 {
+    width: 90%;
+    margin-left: 7%;
+    padding-top: 1%;
+}
+
+.parte2 {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.cajasarriba {
+    width: 30%;
+}
+
+.ph-orgname {
+    width: 60%;
+    margin-left: 1%;
+}
+
+.ph-orgname::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+    /* Centrado vertical */
+}
+
+.cajasabajo {
+    width:15%;
+    margin: 1%;
+}
+
+.tip {   
+    margin: 1%;
+    width: 40%;
+    text-align: center;
+}
+.btngene {
+    background-color: #198754b7;
+    color: white;
+}
+
+.cajasdata {
+    width: 17%;
+}
+
+.ph-cajasdata {
+    width: 37%;
+    margin-left: 1%;
+}
+
+.ph-cajasdata::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+    /* Centrado vertical */
+}
+
+.cargo {
+    width: 36.5%;
+    text-align: center;
+}

@@ -1,0 +1,72 @@
+<!-- <app-header-principal></app-header-principal> -->
+
+<div class="fondoImgCrearUsuario d-flex justify-content-center align-items-center">
+    <div class="contenidoCrearUsuario">
+        <form action="" class="registrar">
+            <h2 class="registrar_titulo">CREAR TU CUENTA</h2>
+            <div class="contenedor-inputs">
+                <div class="input-register">
+                    <label for="ingresarDni">DNI</label>
+                    <input type="text" name="ingresarDni" [(ngModel)]="solicitudDto.dni" id="ingresarDni"
+                        [ngModelOptions]="{standalone: true}" class="miImputGeneral tamanio">
+                </div>
+                <div class="input-register">
+                    <label for="ingresarPassword">CONTRASEÑA</label>
+                    <input type="password" name="ingresarPassword" [(ngModel)]="solicitudDto.password"
+                        [ngModelOptions]="{standalone: true}" id="ingresarPassword" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarNombres">NOMBRES</label>
+                    <input type="text" name="ingresarNombres" [(ngModel)]="solicitudDto.nombrePersona"
+                        [ngModelOptions]="{standalone: true}" id="ingresarNombres" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarApellidoPat">APELLIDO PATERNO</label>
+                    <input type="text" name="ingresarApellidoPat" [(ngModel)]="solicitudDto.apellidoPaterno"
+                        [ngModelOptions]="{standalone: true}" id="ingresarApellidoPat" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarApellidoMat">APELLIDO MATERNO</label>
+                    <input type="text" name="ingresarApellidoMat" [(ngModel)]="solicitudDto.apellidoMaterno"
+                        [ngModelOptions]="{standalone: true}" id="ingresarApellidoMat" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarCorreo">CORREO</label>
+                    <input type="email" name="ingresarCorreo" [(ngModel)]="solicitudDto.correo"
+                        [ngModelOptions]="{standalone: true}" id="ingresarCorreo" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarTelefono">TELEFONO</label>
+                    <input type="number" [(ngModel)]="solicitudDto.telefono" [ngModelOptions]="{standalone: true}"
+                        id="ingresarTelefono" class="miImputGeneral tamanio" required>
+                </div>
+                <div class="input-register">
+                    <label for="ingresarDireccion">DIRECCIÓN</label>
+                    <input type="text" name="ingresarDireccion" [(ngModel)]="solicitudDto.domicilio"
+                        [ngModelOptions]="{standalone: true}" id="ingresarDireccion" class="miImputGeneral tamanio"
+                        required>
+                </div>
+                <div class="input-register">
+                    <label for="fecha_nacimiento">FECHA DE NACIMIENTO</label>
+                    <input type="date" name="fecha_nacimiento" [(ngModel)]="solicitudDto.fechaNacimiento"
+                        [ngModelOptions]="{standalone: true}" id="fecha_nacimiento" class="miImputGeneral tamanio"
+                        required>
+                </div>
+
+                <div class="checkBox">
+                    <input type="checkbox" id="registrarAceptarTerminos" required>
+                    <label class="labelCheckBox" for="registrarAceptarTerminos">He leído y acepto los terminos y
+                        condiciones</label>
+                </div>
+
+                <input type="submit" (click)="registrarUsuario()" class="btn-registrarme" value="Registrarme">
+
+            </div>
+        </form>
+    </div>
+</div>
