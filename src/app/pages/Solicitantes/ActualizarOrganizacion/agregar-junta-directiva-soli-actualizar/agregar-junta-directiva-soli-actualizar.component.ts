@@ -5,6 +5,7 @@ import { JuntaDirectiva } from 'src/app/models/JuntaDirectiva.model';
 import { JuntaDirectivaDto } from 'src/app/models/JuntaDirectivaDto.model';
 import { CargoJuntaService } from 'src/app/services/CargoJunta.service';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-junta-directiva-soli-actualizar',
@@ -24,13 +25,19 @@ export class AgregarJuntaDirectivaSoliActualizarComponent implements OnInit {
     private cargoJuntaService: CargoJuntaService) { }
 
   ngOnInit(): void {
-
+    this.getCargoJunta();
+    this.listarJuntaDirectivaDelSolicitante();
   }
 
   siguiente() {
     this.router.navigate(['/admin-panel/documentos-actualizar-organizacion']);
   }
 
+
+  handleCargoJunta(event: Event) {
+    const element = event.target as HTMLSelectElement;
+    this.registrarJuntaDirectiva.idCargoJunta = parseInt(element.value);
+  }
 
   getCargoJunta() {
     this.cargoJuntaService.getCargoJunta().subscribe({
@@ -45,7 +52,7 @@ export class AgregarJuntaDirectivaSoliActualizarComponent implements OnInit {
   }
 
   listarJuntaDirectivaDelSolicitante() {
-    const idSolicitud = localStorage.getItem('idSolicitudCreada');
+    const idSolicitud = localStorage.getItem('idSolicitudActualizacionCreada');
     this.solicitudService.listarJuntaDirectivaDelSolicitante(+idSolicitud).subscribe({
       next: (resp: any) => {
         console.log(resp);
@@ -54,6 +61,27 @@ export class AgregarJuntaDirectivaSoliActualizarComponent implements OnInit {
     })
   }
 
+  agregarJuntaDirectiva() {
+    const idSolicitud = localStorage.getItem('idSolicitudActualizacionCreada');
+    this.solicitudService.crearJuntaDirectiva(this.registrarJuntaDirectiva, idSolicitud).subscribe({
+      next: (resp: any) => {
+        console.log(resp);
+        Swal.fire({
+          icon: 'success',
+          title: 'Datos Guardados Corectamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        let juntaDirectiva: JuntaDirectivaDto = new JuntaDirectivaDto();
+        this.registrarJuntaDirectiva = juntaDirectiva;
+
+        this.listarJuntaDirectivaDelSolicitante();
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+  }
 
 
 }

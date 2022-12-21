@@ -35,14 +35,24 @@
                                             ASUNTO : RESOLUCIÓN DE RECONOCIMIENTO
                                         </label>
                                     </div>
-                                    <div class="parte2a p-1">
+
+                                    <div class="parte2a1 p-1">
                                         <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
-                                            placeholder="Ingrese una breve descripción sobre la resolución de reconocimiento">
+                                            placeholder="Ingrese el Nombre de la Organización Social"
+                                            [(ngModel)]="resolucionDto.nombreOrganizacion">
                                     </div>
+
+                                    <div class="parte2a2 p-1">
+                                        <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
+                                            placeholder="Ingrese una breve descripción sobre la resolución de reconocimiento"
+                                            [(ngModel)]="resolucionDto.descripcionResolucion">
+                                    </div>
+
                                     <div class="parte3a p-1 d-flex justify-content-star">
 
                                         <div class="arch">
-                                            <input type="file" class="adj">
+                                            <input type="file" class="adj" (change)="seleccionarFile($event)"
+                                                accept=".pdf">
                                         </div>
                                         <label for="exampleFormControlInput1" class="aba form-label">
                                             ADJUNTAR RESOLUCIÓN RUOS
@@ -102,7 +112,8 @@
                                 </div>
                             </div>
 
-                            <button type="button" class="subreso btn btn" (click)="enviar()">SUBIR RESOLUCIÓN</button>
+                            <button type="button" class="subreso btn btn" (click)="registrarResolucion()">SUBIR
+                                RESOLUCIÓN</button>
 
                         </div>
                     </div>

@@ -3,6 +3,7 @@ export class solicitudDto{
     tipoOrganizacionSocial: number;
     nivelOrganizacionSocial: number;
     estadoSolicitud: number;
+    correoSolicitante?: string;
 
     tipoSolicitud: number;
 

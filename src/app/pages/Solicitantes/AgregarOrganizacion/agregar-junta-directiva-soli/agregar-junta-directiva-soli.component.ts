@@ -5,6 +5,7 @@ import { JuntaDirectiva } from 'src/app/models/JuntaDirectiva.model';
 import { JuntaDirectivaDto } from 'src/app/models/JuntaDirectivaDto.model';
 import { CargoJuntaService } from 'src/app/services/CargoJunta.service';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-agregar-junta-directiva-soli',
@@ -30,6 +31,13 @@ export class AgregarJuntaDirectivaSoliComponent implements OnInit {
   }
 
   siguiente() {
+    
+    Swal.fire({
+      icon: 'success',
+      title: 'Datos Guardados Corectamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.router.navigate(['/admin-panel/documentos-agregar-organizacion']);
   }
 
@@ -60,7 +68,12 @@ export class AgregarJuntaDirectivaSoliComponent implements OnInit {
 
         let juntaDirectiva: JuntaDirectivaDto = new JuntaDirectivaDto();
         this.registrarJuntaDirectiva = juntaDirectiva;
-
+        Swal.fire({
+          icon: 'success',
+          title: 'Datos guardados Correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.listarJuntaDirectivaDelSolicitante();
       },
       error: (err: any) => {

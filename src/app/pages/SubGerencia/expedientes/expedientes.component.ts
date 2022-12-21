@@ -18,7 +18,7 @@ export class ExpedientesComponent implements OnInit {
     this.listarParaSubirInformetecnico();
   }
 
-  listarParaSubirInformetecnico(){
+  listarParaSubirInformetecnico() {
     this.subGerenciaService.listarParaSubirInformetecnico().subscribe({
       next: (solicitud: Solicitud[]) => {
         this.solicitud = solicitud;
@@ -27,9 +27,9 @@ export class ExpedientesComponent implements OnInit {
     })
   }
 
-  subirInforme(idSolicitud: any){
+  verDocuParaSubirInforme(idSolicitud: any) {
     localStorage.setItem('idSolicitudParaInforme', idSolicitud);
-    this.router.navigate(['/admin-panel/informe-tecnico']);
+    this.router.navigate(['/admin-panel/documentos-solicitud']);
   }
 
 }

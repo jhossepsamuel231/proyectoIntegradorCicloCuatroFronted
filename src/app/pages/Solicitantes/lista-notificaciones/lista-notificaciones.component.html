@@ -5,86 +5,30 @@
             <div class="general"><br>
                 <h1 class="titulo1">MIS NOTIFICACIONES</h1>
 
-                <div class="buscadores">
-                    <div class="row g-2">
-                        <div class="col-12">
-                            <div class="p-3">
-                                <label for="exampleFormControlInput1" class="zonlb form-label m-3">TIPO DE
-                                    SOLICITUD:</label>
-                                <select class="zon form-select rounded-pill" aria-label="Default select example">
-                                    <option selected></option>
-                                    <option value="1"></option>
-                                    <option value="2">Registro</option>
-                                    <option value="3">Actualización</option>
-                                </select>
-                                <label for="exampleFormControlInput1" class="zonlb form-label m-3">RESULTADO:</label>
-                                <select class="zon form-select rounded-pill" aria-label="Default select example">
-                                    <option selected></option>
-                                    <option value="1"></option>
-                                    <option value="2">Aprobado</option>
-                                    <option value="3">Desaprobado</option>
-                                </select>
-                                <button type="button" class="bus btn btn">BUSCAR</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <table class="tabla table shadow">
                     <thead class="cabezeratable">
                         <tr>
                             <th class="letracabe" scope="col">#</th>
                             <th class="letracabe" scope="col">TIPO SOLICITUD</th>
-                            <th class="letracabe" scope="col">NOTIFICANTE</th>
-                            <th class="letracabe" scope="col">FECHA NOTIFICACIÓN</th>
+                            <th class="letracabe" scope="col">DESCRIPCION</th>
                             <th class="letracabe" scope="col">RESULTADO</th>
+                            <th class="letracabe" scope="col">DOCUMENTO NOTIFICACION</th>
                             <th class="letracabe" scope="col">
                                 <i class="fa-solid fa-download"></i>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="cuerpo">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
+                        <tr *ngFor="let data of notificacion; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ data.solicitud.tipoSolicitud.nombreTipoSolicitud }}</td>
+                            <td>{{ data.descripcionNotificacion }}</td>
+                            <td>{{ data.resultadoNotificacion }}</td>
+                            <td class="texto">
+                                <i class="doc fa-solid fa-file-pdf" style="color: red;"
+                                    (click)="verDoc(data.documentoNotificacion)"></i>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

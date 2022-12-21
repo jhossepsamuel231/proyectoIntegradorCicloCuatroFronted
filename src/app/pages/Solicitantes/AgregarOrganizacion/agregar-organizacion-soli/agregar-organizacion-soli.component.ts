@@ -114,11 +114,20 @@ export class AgregarOrganizacionSoliComponent implements OnInit {
   registrarSolicitudes() {
     const usuario_session = sessionStorage.getItem('usuarioLogged');
     let usuario: any = JSON.parse(usuario_session!)
+
+    this.registrarSolcitud.correoSolicitante = usuario.correo;
+    console.log(this.registrarSolcitud.correoSolicitante);
     this.registrarSolcitud.usuario = usuario.idUsuario;
     this.solicitudService.crearSolcitud(this.registrarSolcitud).subscribe({
       next: (resp: any) => {
         console.log(resp);
         localStorage.setItem("idSolicitudCreada", resp.data.idSolicitud);
+        Swal.fire({
+          icon: 'success',
+          title: 'Datos guardados Correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigateByUrl('admin-panel/solictud-agregar-junta-directiva-soli');
       },
       error: (err: any) => {
@@ -133,14 +142,14 @@ export class AgregarOrganizacionSoliComponent implements OnInit {
 
     const usuario_session: any = JSON.parse(sessionStorage.getItem('usuarioLogged'));
     let idUsuario: number = usuario_session.idUsuario;
-    console.log("Holaaaa que fue xd");
-    console.log("este es el idUsuario " + idUsuario);
+
 
     this.solicitudService.verificarRegistroSolicitud(idUsuario).subscribe({
       next: (solicitud: Solicitud) => {
         this.verificar = solicitud;
         this.registrada = this.verificar.estadoSolicitd;
         console.log(this.verificar);
+        console.log(" estado: " + this.registrada);
 
       },
       error: (err) => {

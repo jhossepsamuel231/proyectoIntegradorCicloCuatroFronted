@@ -11,11 +11,11 @@
             <div class="col-6">
               <label for="exampleFormControlInput1" class="name form-label">N° Informe Técnico:
               </label>
-              <input type="number" class="ph-orgname" id="exampleFormControlInput1"
-                placeholder="Ingrese el N° Informe Técnico">
+              <input type="text" class="ph-orgname" id="exampleFormControlInput1"
+                placeholder="Ingrese el codigo Informe Técnico" [(ngModel)]="codigoInformeTecnico">
             </div>
             <div class="col-6 ">
-              <button type="button" class="bus btn btn">SELECCIONAR</button>
+              <button type="button" class="bus btn btn" (click)="buscarPorCodigoInformeTecnico()">SELECCIONAR</button>
             </div>
           </div>
         </div>
@@ -28,13 +28,13 @@
               <div class="result">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="option1">
+                    value="option1" (click)="resultadoAceptado()">
                   <label class="form-check-label" for="inlineRadio1">Aprobado</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
                     value="option2">
-                  <label class="form-check-label" for="inlineRadio2">Desaprobado</label>
+                  <label class="form-check-label" for="inlineRadio2" (click)="resultadoRechazado()">Desaprobado</label>
                 </div>
               </div>
             </div>
@@ -53,13 +53,21 @@
                       ASUNTO : NOTIFICACIÓN DEL RESULTADO DE EVALUACIÓN
                     </label>
                   </div>
-                  <div class="parte2a p-1">
+                  <div class="parte2a1 p-1">
+                    <div class="input-group mb-3">
+                      <span class="cudromail input-group-text" id="basic-addon1">@</span>
+                      <input type="text" class="cudromail form-control" placeholder="Ingrese el correo electronico"
+                        aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="notificacion.correoEnviado">
+                    </div>
+                  </div>
+                  <div class="parte2a2 p-1">
                     <input type="text" class="ph-ingtext" id="exampleFormControlInput1"
-                      placeholder="Ingrese una breve descripción sobre la notificación">
+                      placeholder="Ingrese una breve descripción sobre la notificación"
+                      [(ngModel)]="notificacion.descripcionNotificacion">
                   </div>
                   <div class="parte3a p-1 d-flex justify-content-star">
                     <div class="arch">
-                      <input type="file" class="adj">
+                      <input type="file" class="adj" (change)="seleccionarFile($event)" accept=".pdf">
                     </div>
                     <label for="exampleFormControlInput1" class="aba form-label">
                       ADJUNTAR NOTIFICACIÓN
@@ -84,28 +92,35 @@
                             NOMBRE:
                           </label>
                           <input type="text" class="nombrecaja form-label shadow-sm" id="exampleFormControlInput1"
-                            placeholder=" " disabled>
+                            placeholder=" " disabled [(ngModel)]="informeTecnico.solicitud.nombreOrganizacion">
                         </div>
                         <div class="col-12">
                           <label for="exampleFormControlInput1" class="enca2 form-label">
                             CÓDIGO:
                           </label>
                           <input type="text" class="nombrecaja form-label shadow-sm" id="exampleFormControlInput1"
-                            placeholder=" " disabled>
+                            placeholder=" " disabled [(ngModel)]="informeTecnico.codigoInformeTecnico">
+                        </div>
+                        <div class="col-12">
+                          <label for="exampleFormControlInput1" class="enca2 form-label">
+                            Correo:
+                          </label>
+                          <input type="text" class="nombrecaja form-label shadow-sm" id="exampleFormControlInput1"
+                            placeholder="" disabled [(ngModel)]="informeTecnico.solicitud.correoSolicitante">
                         </div>
                         <div class="col-12">
                           <label for="exampleFormControlInput1" class="enca2 form-label">
                             RESULTADO:
                           </label>
                           <input type="text" class="resultadocaja form-label shadow-sm" id="exampleFormControlInput1"
-                            placeholder=" " disabled>
+                            placeholder=" " disabled [(ngModel)]="informeTecnico.resultado">
                         </div>
                         <div class="col-12">
                           <label for="exampleFormControlInput1" class="enca2 form-label">
                             FECHA SOLICITUD:
                           </label>
                           <input type="text" class="fechacaja form-label shadow-sm" id="exampleFormControlInput1"
-                            placeholder=" " disabled>
+                            placeholder=" " disabled [ngModel]="informeTecnico.fechaEmision | date:'dd/MM/YYYY'">
                         </div>
                       </div>
                     </div>
@@ -115,7 +130,7 @@
                 </div>
               </div>
 
-              <button type="button" class="subreso btn btn">ENVIAR NOTIFICACIÓN</button>
+              <button type="button" class="subreso btn btn" (click)="registrarFile()">ENVIAR NOTIFICACIÓN</button>
             </div>
           </div>
 

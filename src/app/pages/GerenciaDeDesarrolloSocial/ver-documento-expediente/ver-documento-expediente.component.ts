@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Documento } from 'src/app/models/Documento';
 import { GerenciaDeDesarrolloSocialService } from 'src/app/services/GerenciaDeDesarrolloSocial.service';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ver-documento-expediente',
@@ -40,6 +41,13 @@ export class VerDocumentoExpedienteComponent implements OnInit {
       next: (resp: any) => {
         console.log(resp);
         localStorage.removeItem("idSolicitud");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Solicitud Aceptada y Enviada Correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigate(['/admin-panel/ver-expedientes']);
       },
       error: (err) => {
@@ -54,6 +62,13 @@ export class VerDocumentoExpedienteComponent implements OnInit {
       next: (resp: any) => {
         console.log(resp);
         localStorage.removeItem("idSolicitud");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Solicitud Rechazada Correctamente',
+          showConfirmButton: false,
+          timer: 1700
+        })
         this.router.navigate(['/admin-panel/ver-expedientes']);
 
       },
@@ -61,6 +76,10 @@ export class VerDocumentoExpedienteComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  verDoc(documento: string) {
+    window.open(documento, "_blank");
   }
 
 }

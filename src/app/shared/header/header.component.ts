@@ -19,7 +19,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  cerrarSesion(){
+  principal() {
+    this.router.navigate(['/admin-panel/dashboard']);
+  }
+
+  cerrarSesion() {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuarioLogged');
     this.router.navigate(['/principal-panel/vista-publica'])

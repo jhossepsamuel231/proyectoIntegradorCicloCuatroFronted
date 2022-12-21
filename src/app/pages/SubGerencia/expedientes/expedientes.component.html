@@ -6,51 +6,7 @@
                 <h1 class="titulo1">EXPEDIENTES</h1>
 
                 <div class="buscadores d-flex justify-content-center">
-                    <div class=" buscadorge row g-2 d-block justify-content-center m-4 ">
-                        <div class="col-12">
-                            <div class="p-3">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-7">
-                                        <label for="exampleFormControlInput1" class="name form-label">N° Expediente:
-                                        </label>
-                                        <input type="text" class="ph-orgname" id="exampleFormControlInput1"
-                                            placeholder="Ingrese el N° Expediente">
-                                    </div>
-                                    <div class="col-3">
-                                        <button type="button" class="bus btn btn">BUSCAR</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="p-3">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-5 ">
-                                        <label for="exampleFormControlInput1" class="name form-label">Zona:
-                                        </label>
-                                        <select class="zona form-select rounded-pill"
-                                            aria-label="Default select example">
-                                            <option selected></option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-5 ">
-                                        <label for="exampleFormControlInput1" class="name form-label">Tipo solicitud:
-                                        </label>
-                                        <select class="zona form-select rounded-pill"
-                                            aria-label="Default select example">
-                                            <option selected></option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
 
@@ -59,6 +15,7 @@
                         <thead class="cabezeratable">
                             <tr>
                                 <th class="letracabe" scope="col">N° EXPEDIENTE</th>
+                                <th class="letracabe" scope="col">CODIGO SOLICITUD</th>
                                 <th class="letracabe" scope="col">NOMBRE DE ORGANIZACIÓN</th>
                                 <th class="letracabe" scope="col">ZONA</th>
                                 <th class="letracabe" scope="col">TIPO DE SOLICITUD</th>
@@ -69,14 +26,15 @@
                         <tbody class="cuerpo">
                             <tr *ngFor="let solicitud of solicitud; let i = index">
                                 <td>{{ solicitud.numeroExpediente }}</td>
+                                <td>{{ solicitud.codigoSolicitud }}</td>
                                 <td>{{ solicitud.nombreOrganizacion }}</td>
                                 <td>{{ solicitud.zonaUbicacion.zonaUbicacion}}</td>
                                 <td>{{ solicitud.tipoSolicitud.nombreTipoSolicitud }}</td>
                                 <td>{{ solicitud.fechaRegistro | date:'dd/MM/YYYY'}}</td>
                                 <td>
                                     <div class="btngen">
-                                        <button type="button" (click)="subirInforme(solicitud.idSolicitud)"
-                                            class="btngene btn btn m-2">SUBIR INFORME</button>
+                                        <button type="button" (click)="verDocuParaSubirInforme(solicitud.idSolicitud)"
+                                            class="btngene btn btn m-2">VER DOCUMENTOS</button>
                                     </div>
                                 </td>
                             </tr>

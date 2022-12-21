@@ -3,8 +3,9 @@
         <div class="container-fluid">
 
             <div class="general"> <br>
+                <h1 class="titulo1">ACTUALIZACIÓN DE ORGANIZACIÓN</h1>
 
-                <h1 class="titulo1">ACTUALIZAR MIEMBROS DE JUNTA DIRECTIVA:</h1>
+                <h4 class="titulo2">ACTUALIZAR MIEMBROS DE JUNTA DIRECTIVA:</h4>
 
                 <div class="datapersona">
                     <div class="row g-2">
@@ -15,42 +16,48 @@
                                         Nombres Completos:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese Nombre Completo del miembro de junta">
+                                        placeholder="Ingrese Nombre Completo del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.nombrePersona">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
                                         Apellido Paterno:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese el Apellido Paterno del miembro de junta">
+                                        placeholder="Ingrese el Apellido Paterno del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.apellidoPaterno">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
                                         Apellido Materno:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese el Apellido Materno del miembro de junta">
+                                        placeholder="Ingrese el Apellido Materno del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.apellidoMaterno">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
                                         DNI:
                                     </label>
                                     <input type="number" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese el DNI del miembro de junta">
+                                        placeholder="Ingrese el DNI del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.dni">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
                                         Dirección:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese la Dirección del miembro de junta">
+                                        placeholder="Ingrese la Dirección del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.domicilio">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
                                         Telefono:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese el Telefono del miembro de junta">
+                                        placeholder="Ingrese el Telefono del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.telefono">
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
                                     <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
@@ -58,11 +65,13 @@
                                     </label>
                                     <select class="cargo form-select rounded-pill m-2 "
                                         aria-label="Default select example"
-                                        placeholder="Seleccione el Cargo del miembro de junta">
-                                        <option selected></option>
-                                        <option value="1">Presidente</option>
-                                        <option value="2">Secretario</option>
-                                        <option value="2">Tesorero</option>
+                                        placeholder="Seleccione el Cargo del miembro de junta"
+                                        (change)="handleCargoJunta($event)">
+                                        <option value="0" selected> Seleccionar Opcion </option>
+                                        <option *ngFor="let cargoJunta of cargoJunta"
+                                            value="{{ cargoJunta.idCargoJunta }}"> {{
+                                            cargoJunta.cargoJunta }}
+                                        </option>
                                     </select>
                                 </div>
                                 <div class="caja1 d-flex justify-content-center">
@@ -70,14 +79,16 @@
                                         Correo:
                                     </label>
                                     <input type="text" class="ph-cajasdata m-1" id="exampleFormControlInput1"
-                                        placeholder="Ingrese el Correo Electronico del miembro de junta">
+                                        placeholder="Ingrese el Correo Electronico del miembro de junta"
+                                        [(ngModel)]="registrarJuntaDirectiva.correo">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="btngen d-flex justify-content-center">
-                        <button type="button" class="btngene btn btn m-5">REGISTRAR</button>
+                        <button type="button" class="btngene btn btn m-5"
+                            (click)="agregarJuntaDirectiva()">REGISTRAR</button>
                     </div>
 
                 </div>
@@ -98,18 +109,18 @@
                         </tr>
                     </thead>
                     <tbody class="cuerpo">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td class="rell">Jose Mark</td>
-                            <td class="rell">Peréz</td>
-                            <td class="rell">Ordoñez</td>
-                            <td class="rell">93883928</td>
-                            <td class="rell">Av. Los Cisnes 763</td>
-                            <td class="rell">933849303</td>
-                            <td class="rell">Presidente</td>
-                            <td class="rell">markjose123@gmail.com</td>
+                        <tr *ngFor="let juntaDirectivas of juntaDirectiva; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td class="rell">{{ juntaDirectivas.persona.nombrePersona }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.apellidoPaterno }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.apellidoMaterno }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.dni }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.domicilio }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.telefono }}</td>
+                            <td class="rell">{{ juntaDirectivas.cargoJunta.cargoJunta }}</td>
+                            <td class="rell">{{ juntaDirectivas.persona.correo }}</td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row">2</th>
                             <td class="rell">Mark Jose</td>
                             <td class="rell">Peréz</td>
@@ -163,12 +174,12 @@
                             <td class="rell">933849303</td>
                             <td class="rell">Presidente</td>
                             <td class="rell">markjose123@gmail.com</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
 
                 <div class="btngen d-flex justify-content-center">
-                    <button type="button" class="btngene btn btn m-4">ADJUNTAR DOCUMENTOS</button>
+                    <button type="button" class="btngene btn btn m-4" (click)="siguiente()">ADJUNTAR DOCUMENTOS</button>
                 </div>
 
 

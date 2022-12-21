@@ -7,6 +7,7 @@ import { InformeTecnico } from 'src/app/models/InformeTecnico.model';
 import { Notificacion } from 'src/app/models/Notificacion.model';
 import { GerenciaDeDesarrolloSocialService } from 'src/app/services/GerenciaDeDesarrolloSocial.service';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-envio-de-notificacion',
@@ -94,6 +95,13 @@ export class EnvioDeNotificacionComponent implements OnInit {
         this.solicitudService.DerivarSolicitud(idSolicitud, "GerenciaDos").subscribe({
           next: (resp: any) => {
             console.log(resp);
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Notificacion Enviada Correctamente',
+              showConfirmButton: false,
+              timer: 1700
+            })
             this.router.navigate(['/admin-panel/informes-tecnicos']);
           },
           error: (err) => {

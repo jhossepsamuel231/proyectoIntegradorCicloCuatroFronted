@@ -2,31 +2,42 @@
     <div class="content">
         <div class="container-fluid">
 
-            <br>
+            <div class="centrarLoading" *ngIf="loading">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <span> Subiendo Archivos...</span>
+            </div>
 
-            <h1 class="titulo1">AGREGAR DOCUMENTOS</h1>
+            <div *ngIf="!loading">
+                <br>
 
-            <div class="cuadro1">
-                <div class="aa d-block justify-content-center p-3 shadow-lg">
+                <h1 class="titulo1">AGREGAR DOCUMENTOS</h1>
 
-                    <div class="c d-flex justify-content-star border"
-                        *ngFor="let requisitos of requisito; let i = index">
-                        <label for="exampleFormControlInput1" class="cajasarriba form-label  p-1">
-                            {{i + 1}}. {{requisitos.nombreRequisito}} </label>
+                <div class="cuadro1">
+                    <div class="aa d-block justify-content-center p-3 shadow-lg">
 
-                        <input type="file" class="mt-3" type="file" (change)="selectFile($event, i)">
+                        <div class="c d-flex justify-content-star border"
+                            *ngFor="let requisitos of requisito; let i = index">
+                            <label for="exampleFormControlInput1" class="cajasarriba form-label  p-1">
+                                {{i + 1}}. {{requisitos.nombreRequisito}} </label>
 
-                        <button type="button" class="btngene btn btn m-2" *ngIf="requisitos.file"
-                            (click)="verDocumento(requisitos.verDocumento)">
-                            <i class="fa-solid fa-eye"></i>
-                        </button>
+                            <input type="file" class="mt-3" type="file" (change)="selectFile($event, i)">
 
-                        <!-- <button type="button" class="btngene btn btn m-2" *ngIf="requisitos.file">
+                            <button type="button" class="btngene btn btn m-2" *ngIf="requisitos.file"
+                                (click)="verDocumento(requisitos.verDocumento)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                            <!-- <button type="button" class="btngene btn btn m-2" *ngIf="requisitos.file">
                             <i class="fa-solid fa-circle-check"></i>
                         </button> -->
-                    </div>
+                        </div>
 
-                    <!--  <div class="c d-flex justify-content-star border">
+                        <!--  <div class="c d-flex justify-content-star border">
                         <label for="exampleFormControlInput1" class="cajasarriba form-label  p-1">
                             2. ACTA DE FUNDACIÓN O CONSTITUCIÓN</label>
                             <input type="file" class="mt-3" type="file" (change)="uploadFile($event)">
@@ -112,15 +123,16 @@
                         </button>
                     </div> -->
 
+                    </div>
                 </div>
-            </div>
 
-            <div class="btngen d-flex justify-content-center">
-                <button type="button" class="btngene btn btn m-4" (click)="subirArchivos()" *ngIf="!loading">ENVIAR
-                    SOLICITUD</button>
-                <span *ngIf="loading">Subiendo Archivos....</span>
+                <div class="btngen d-flex justify-content-center">
+                    <button type="button" class="btngene btn btn m-4" (click)="subirArchivos()">ENVIAR
+                        SOLICITUD</button>
 
-                <!-- <div>
+
+
+                    <!-- <div>
                 
                 
                 <input type="file" (change)="uploadFile($event)">
@@ -133,6 +145,8 @@
 
 
 
+                </div>
             </div>
         </div>
     </div>
+</div>

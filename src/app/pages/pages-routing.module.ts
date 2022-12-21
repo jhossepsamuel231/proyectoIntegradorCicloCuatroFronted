@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../auth/login/login.component';
+import { RecuperarContraseniaComponent } from '../auth/recuperar-contrasenia/recuperar-contrasenia.component';
 import { AdminPanelGuard } from '../guards/admin-panel.guard';
 import { LoginGuard } from '../guards/login.guard';
 import { PanelAdministradorComponent } from '../shared/panel-administrador/panel-administrador.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
     title: 'principal Panel | Chaclacayo',
     children: [
       { path: 'login', canActivate: [LoginGuard], component: LoginComponent, title: 'Login' },
+      { path: 'recuperar-contrasenia', component: RecuperarContraseniaComponent, title: 'Recuperando Contraseña' },
       { path: '', loadChildren: () => import('./vistas/vistas.module').then(m => m.VistasModule) },
     ]
   },

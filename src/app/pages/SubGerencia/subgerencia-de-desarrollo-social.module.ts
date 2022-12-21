@@ -6,13 +6,17 @@ import { ExpedientesComponent } from './expedientes/expedientes.component';
 import { RegistrarInformeTecnicoComponent } from './registrar-informe-tecnico/registrar-informe-tecnico.component';
 import { FormsModule } from '@angular/forms';
 import { InformesTecnicoComponent } from './informes-tecnico/informes-tecnico.component';
+import { VerDocumentosSolicitudComponent } from './ver-documentos-solicitud/ver-documentos-solicitud.component';
+import { DocumentosDeSolicitudComponent } from './documentos-de-solicitud/documentos-de-solicitud.component';
 
 
 @NgModule({
   declarations: [
     ExpedientesComponent,
     RegistrarInformeTecnicoComponent,
-    InformesTecnicoComponent
+    InformesTecnicoComponent,
+    VerDocumentosSolicitudComponent,
+    DocumentosDeSolicitudComponent
   ],
   imports: [
     CommonModule,

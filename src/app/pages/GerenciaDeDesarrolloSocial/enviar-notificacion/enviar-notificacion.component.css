@@ -59,6 +59,24 @@
     line-height: 40px;
 }
 
+.cudromail {
+    margin-top: 1%;
+    background-color: whitesmoke;
+    color: rgba(0, 0, 0, 0.616);
+    border-color: rgba(0, 0, 0, 0.534)
+}
+
+.parte2a1 {
+    height: 14%;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.parte2a2 {
+    height: 60%;
+    background-color: whitesmoke;
+}
+
 .parte2a {
     height: 240px;
     background-color: whitesmoke;
@@ -114,7 +132,7 @@
 
 .parte2b {
     width: 100%;
-    height: 72%;
+    height: 80%;
     background: rgba(255, 255, 255, 0.705);
 }
 

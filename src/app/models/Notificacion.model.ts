@@ -8,5 +8,4 @@ export class Notificacion{
     correoEnviado: string;
     descripcionNotificacion: string;
     solicitud: Solicitud;
-
 }

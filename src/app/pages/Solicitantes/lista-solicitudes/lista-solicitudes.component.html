@@ -5,101 +5,76 @@
             <div class="general"><br>
                 <h1 class="titulo1">MIS SOLICITUDES</h1>
 
-                <div class="buscadores">
-                    <div class="row g-2">
-                        <div class="col-12">
-                            <div class="p-3">
-                                <div class="row g-2 d-flex justify-content-center">
-                                    <div class="col-5">
-                                        <div class="p-3  d-flex justify-content-end">
-                                            <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
-                                                Tipo de Solicitud:
-                                            </label>
-                                            <select class="tip form-select rounded-pill m-1"
-                                            aria-label="Default select example">
-                                            <option selected></option>
-                                            <option value="1">Registro</option>
-                                            <option value="2">Actualización</option>
-                                        </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="p-3  d-flex justify-content-center">
-                                            <label for="exampleFormControlInput1" class="cajasdata p-1 form-label  ">
-                                                Fecha de Solicitud:
-                                            </label>
-                                            <select class="tip form-select rounded-pill m-1"
-                                            aria-label="Default select example">
-                                            <option selected></option>
-                                            <option value="1">Registro</option>
-                                            <option value="2">Actualización</option>
-                                        </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-3 d-block justify-content-star">
-                                        <div class="p-3">
-                                            <button class="btngene btn btn">BUSCAR</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="tablita p-4 ">
                     <table class="tabla table shadow">
                         <thead class="cabezeratable">
                             <tr>
                                 <th class="letracabe" scope="col">#</th>
-                                <th class="letracabe" scope="col">N° SOLICITUD</th>
+                                <th class="letracabe" scope="col">NOMBRE SOLICITUD</th>
                                 <th class="letracabe" scope="col">TIPO SOLICITUD</th>
                                 <th class="letracabe" scope="col">FECHA SOLICITUD</th>
                             </tr>
                         </thead>
                         <tbody class="cuerpo">
-                            <tr>
-                                <th scope="row"class="rell">1</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"class="rell">2</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"class="rell">3</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="rell">4</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="rell">5</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="rell">6</th>
-                                <td class="rell">N° 2022-00001</td>
-                                <td class="rell">Registro de Organización</td>
-                                <td class="rell">29-09-2022</td>
+                            <tr *ngFor="let data of solicitud; let i = index">
+                                <th scope="row">{{ i + 1 }}</th>
+                                <td class="rell">{{ data.nombreOrganizacion }}</td>
+                                <td class="rell">{{ data.tipoSolicitud.nombreTipoSolicitud }}</td>
+                                <td class="rell">{{ data.fechaRegistro | date:'dd/MM/YYYY' }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
-            
+
         </div>
     </div>
 </div>

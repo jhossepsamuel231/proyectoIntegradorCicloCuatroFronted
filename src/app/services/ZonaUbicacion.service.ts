@@ -12,6 +12,6 @@ export class ZonaUbicacionService {
   constructor(private http: HttpClient) { }
 
   getZonaUbicacion() {
-      return this.http.get<IZonaUbicacion[]>(`${this.endpoint}/zonaUbicacion/listarZonaUbic`);
+    return this.http.get<IZonaUbicacion[]>(`${this.endpoint}/zonaUbicacion/listarZonaUbic`);
   }
 }

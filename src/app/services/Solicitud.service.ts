@@ -6,6 +6,7 @@ import { solicitudDto } from '../models/SolicitudDto.model';
 import { JuntaDirectivaDto } from '../models/JuntaDirectivaDto.model';
 import { JuntaDirectiva } from '../models/JuntaDirectiva.model';
 import { DocumentoDto } from '../models/DocumentoDto.model';
+import { Notificacion } from '../models/Notificacion.model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,28 +40,42 @@ export class solicitudService {
     return this.http.post(`${this.endpoint}/solicitud/actualizarSolicitudOrganizacion`, solicitudDto);
   }
 
-  
+
   //
 
   listarSoliParaMesaDePartes() {
-    return this.http.get<Solicitud[]>(`http://localhost:8181/api/mesaDePartes/listarSolicitudesMesaDePartes`);
+    return this.http.get<Solicitud[]>(`${this.endpoint}/mesaDePartes/listarSolicitudesMesaDePartes`);
   }
 
   DerivarSolicitud(idSolicitud: any, area: String) {
-    return this.http.get<Solicitud[]>(`http://localhost:8181/api/mesaDePartes/actualizarEstado/${idSolicitud}/${area}`);
+    return this.http.get<Solicitud[]>(`${this.endpoint}/mesaDePartes/actualizarEstado/${idSolicitud}/${area}`);
   }
 
   crearUsuario(usuarioDto: UsuarioDto) {
-    return this.http.post<UsuarioDto[]>(`http://localhost:8181/api/usuarios/crear-usuario`, usuarioDto);
+    return this.http.post<UsuarioDto[]>(`${this.endpoint}/usuarios/crear-usuario`, usuarioDto);
   }
 
 
   buscarSolicitudPorId(idSolicitud: number) {
-    return this.http.get<Solicitud>(`http://localhost:8181/api/gerencia/listarSoliParaResolucion/${idSolicitud}`);
+    return this.http.get<Solicitud>(`${this.endpoint}/gerencia/listarSoliParaResolucion/${idSolicitud}`);
   }
 
   verificarRegistroSolicitud(idUsuario: number) {
-    return this.http.get<Solicitud>(`http://localhost:8181/api/usuarios/verificarRegistroSolicitud/${idUsuario}`);
+    return this.http.get<Solicitud>(`${this.endpoint}/usuarios/verificarRegistroSolicitud/${idUsuario}`);
   }
+
+  verificarRegistradoSolicitud(idUsuario: number) {
+    return this.http.get<Solicitud>(`${this.endpoint}/usuarios/verificarRegistradoSolicitud/${idUsuario}`);
+  }
+
+  //usuarios
+  listadoSolicitudPorUsuario(idUsuario: number) {
+    return this.http.get<Solicitud[]>(`${this.endpoint}/usuarios/listadoSolicitudPorUsuario/${idUsuario}`);
+  }
+
+  listadoNotificacionPorUsuario(idUsuario: number) {
+    return this.http.get<Notificacion[]>(`${this.endpoint}/usuarios/listadoNotificacionPorUsuario/${idUsuario}`);
+  }
+
 
 }

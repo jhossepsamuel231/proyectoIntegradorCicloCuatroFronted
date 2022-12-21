@@ -9,6 +9,7 @@ import { NivelOrganizacionService } from 'src/app/services/NivelOrganizacion.ser
 import { solicitudService } from 'src/app/services/Solicitud.service';
 import { TipoOrganizacionService } from 'src/app/services/TipoOrganizacion.service';
 import { ZonaUbicacionService } from 'src/app/services/ZonaUbicacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-organizacion-soli',
@@ -50,9 +51,10 @@ export class ActualizarOrganizacionSoliComponent implements OnInit {
     const usuario_session: any = JSON.parse(sessionStorage.getItem('usuarioLogged'));
     let idUsuario: number = usuario_session.idUsuario;
 
-    this.solicitudService.verificarRegistroSolicitud(idUsuario).subscribe({
+    this.solicitudService.verificarRegistradoSolicitud(idUsuario).subscribe({
       next: (solicitud: Solicitud) => {
         this.verificar = solicitud;
+        this.registrada = this.verificar.estadoSolicitd;
         console.log(this.verificar);
 
       },
@@ -125,10 +127,17 @@ export class ActualizarOrganizacionSoliComponent implements OnInit {
     const usuario_session = sessionStorage.getItem('usuarioLogged');
     let usuario: any = JSON.parse(usuario_session!)
     this.registrarSolcitud.usuario = usuario.idUsuario;
+    this.registrarSolcitud.correoSolicitante = usuario.correo;
     this.solicitudService.crearSolcitudActualizarOrganizacion(this.registrarSolcitud).subscribe({
       next: (resp: any) => {
-        console.log(resp);
         localStorage.setItem("idSolicitudActualizacionCreada", resp.data.idSolicitud);
+        console.log(resp);
+        Swal.fire({
+          icon: 'success',
+          title: 'Datos guardados Correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigateByUrl('admin-panel/solictud-actualizar-junta-directiva-soli');
       },
       error: (err: any) => {

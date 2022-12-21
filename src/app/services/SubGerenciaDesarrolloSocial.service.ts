@@ -26,4 +26,9 @@ export class SubGerenciaDeDesarrolloSocialService {
         return this.http.post<InformeTecnicoDto>(`${this.endpoint}/subGerencia/crear-informe-tecnico/${idSolicitud}`, informTecnicoDto)
     }
 
+    //buscar para subir informe tecnico
+    buscarSolicitudParaSubirInformeTecnico(codigoSolicitud: string) {
+        return this.http.get<Solicitud>(`${this.endpoint}/subGerencia/buscarSolicitudParaSubirInformeTecnico/${codigoSolicitud}`)
+    }
+
 }

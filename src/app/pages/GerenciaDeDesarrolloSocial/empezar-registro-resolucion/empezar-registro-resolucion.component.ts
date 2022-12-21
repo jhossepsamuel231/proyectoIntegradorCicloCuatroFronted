@@ -7,6 +7,7 @@ import { InformeTecnico } from 'src/app/models/InformeTecnico.model';
 import { GerenciaDeDesarrolloSocialService } from 'src/app/services/GerenciaDeDesarrolloSocial.service';
 import { ResolucionDto } from 'src/app/models/ResolucionDto';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-empezar-registro-resolucion',
@@ -50,7 +51,7 @@ export class EmpezarRegistroResolucionComponent implements OnInit {
     this.file = event.target.files[0];
   }
 
-  async registrarInformeTecnico() {
+  async registrarResolucion() {
 
     const idSolicitud = localStorage.getItem('idSolicitudParaRegistrarResolucion');
 
@@ -73,12 +74,19 @@ export class EmpezarRegistroResolucionComponent implements OnInit {
     this.resolucionDto.documentoResolucion = url;
     console.log(this.resolucionDto);
 
-    this.gerenciaService.registrarResolucion(this.resolucionDto).subscribe({
+    this.gerenciaService.registrarResolucion(this.resolucionDto, +idSolicitud).subscribe({
       next: (resp: any) => {
         console.log(resp);
         this.solicitudService.DerivarSolicitud(idSolicitud, "GerenciaDos").subscribe({
           next: (resp: any) => {
             console.log(resp);
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Resolucion Registrada Correctamente',
+              showConfirmButton: false,
+              timer: 1700
+            })
             this.router.navigate(['/admin-panel/enviando-notificacion']);
           },
           error: (err) => {

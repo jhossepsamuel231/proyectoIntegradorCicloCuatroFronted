@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Solicitud } from 'src/app/models/Solicitud.model';
 import { solicitudService } from 'src/app/services/Solicitud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-generar-expediente',
@@ -37,7 +38,13 @@ export class GenerarExpedienteComponent implements OnInit {
     this.solicitudService.DerivarSolicitud(solicitud, "mesaDePartes").subscribe({
       next: (resp: any) => {
         console.log(resp);
-
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Solicitud Derivada Correctamente',
+          showConfirmButton: false,
+          timer: 1900
+        })
         this.listarParaMesaDePartes();
       },
       error: (err) => {

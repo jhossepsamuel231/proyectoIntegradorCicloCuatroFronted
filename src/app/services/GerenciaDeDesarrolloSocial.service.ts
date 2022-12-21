@@ -41,8 +41,8 @@ export class GerenciaDeDesarrolloSocialService {
         return this.http.get<Solicitud[]>(`${this.endpoint}/gerencia/buscarSoliParaResolucion?codigo=${codigo}`);
     }
 
-    registrarResolucion(resolucionDto: ResolucionDto) {
-        return this.http.post<ResolucionDto>(`${this.endpoint}/gerencia/registrar-resolucion-orgSocial`, resolucionDto)
+    registrarResolucion(resolucionDto: ResolucionDto, idSolicitud: number) {
+        return this.http.post<ResolucionDto>(`${this.endpoint}/gerencia/registrar-resolucion-orgSocial/${idSolicitud}`, resolucionDto)
     }
 
     enviarNotificacion(notificacion: Notificacion, idSolicitud: number) {

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { SubGerenciaDeDesarrolloSocialService } from 'src/app/services/SubGerenciaDesarrolloSocial.service';
 import { solicitudService } from 'src/app/services/Solicitud.service';
 import { Solicitud } from 'src/app/models/Solicitud.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-informes-tecnico',
@@ -70,6 +71,13 @@ export class InformesTecnicoComponent implements OnInit {
           next: (resp: any) => {
             console.log(resp);
             localStorage.removeItem("idSolicitudParaInforme");
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Informe Tecnico Creado Correctamente',
+              showConfirmButton: false,
+              timer: 1700
+            })
             this.router.navigate(['/admin-panel/lista-expedientes']);
 
           },

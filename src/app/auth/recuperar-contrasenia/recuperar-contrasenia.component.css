@@ -1,0 +1,60 @@
+.titulo1 {
+    text-align: center;
+    margin: 5%;
+    color: rgba(36, 34, 34, 0.568);
+}
+.titulo2 {
+    text-align: center;
+    margin: 5%;
+    color: rgba(36, 34, 34, 0.568);
+}
+.part1{
+    width: 45%;
+    height: 330px;
+}
+.name{
+    font-size: 140%;
+    color: aliceblue;
+}
+.cuadro1{
+    height: 90%;
+}
+.cuadro2{
+    height: 60%;
+    border-radius: 5px;
+    border-color: rgba(36, 34, 34, 0.568);
+}
+.texto{
+    color: rgba(36, 34, 34, 0.568);
+    font-size: 130%;
+}
+.pa1{
+    background-color: #198754da;
+    height: 25%;
+    border-radius: 10px;
+    line-height: 50px ;
+}
+.ph-orgname {
+    width: 98%;
+    border-radius:7px ;
+    font-size: 130%;
+}
+.cuadro3{
+    height: 25%;
+    background-color: #198754da;
+    border-radius: 10px;
+    line-height: 50px ;
+}
+.btnrechazo{
+    background-color:#bb0a0aaf;
+    color: whitesmoke;
+    border-color:whitesmoke;
+    border-radius: 10px;
+    margin-right: 1%;
+}
+.btnderivar {
+    background-color:#0d804ad0;
+    color: whitesmoke;
+    border-color: whitesmoke;
+    border-radius: 10px;
+}

@@ -62,6 +62,11 @@ export class DocumentosAgregarOrganizacionComponent implements OnInit {
 
     for (let index = 0; index < this.requisito.length; index++) {
       if (!this.requisito[index].file) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Faltan Documentos para registrar Su Organizacion!'
+        })
         console.log("falta subir doc p")
         return;
       }
@@ -93,6 +98,12 @@ export class DocumentosAgregarOrganizacionComponent implements OnInit {
       next: (resp: any) => {
         this.loading = false;
         localStorage.removeItem("idSolicitudCreada");
+        Swal.fire({
+          icon: 'success',
+          title: 'Solicitud Enviada Correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigateByUrl('/admin-panel/dashboard');
         console.log(resp)
       }, error: (err: any) => {
