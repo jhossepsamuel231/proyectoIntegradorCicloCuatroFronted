@@ -40,6 +40,9 @@ export class RegistrarResolucionComponent implements OnInit {
     this.router.navigate(['/admin-panel/dashboard']);
   }
 
+  requisitoPdf(requisitoDocPdf: string) {
+    window.open(requisitoDocPdf, "_blank");
+  }
 
   buscarPorCodigoInformeTecnico() {
     this.gerenciaService.buscarSolicitudParaRegistrarResolucion(this.codigoInformeTecnico).subscribe({

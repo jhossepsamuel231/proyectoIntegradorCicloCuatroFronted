@@ -4,7 +4,7 @@
         <h1 class="login_titulo">Iniciar Sesion</h1>
         <form action="" class="logearse">
             <div class="contenedor-inputs">
-                <input type="number" name="user" required autocomplete="off" [(ngModel)]="usuario.username">
+                <input type="text" name="user" required autocomplete="off" [(ngModel)]="usuario.username" maxlength=9>
                 <span></span>
                 <label for="">DNI: </label>
             </div>
@@ -13,7 +13,7 @@
                 <span></span>
                 <label for="">Contraseña: </label>
             </div>
-            <div class="olvidoContrasenia" >Has olvidado tu contraseña?</div>
+            <div class="olvidoContrasenia">Has olvidado tu contraseña?</div>
             <input type="submit" value="login" (click)="iniciarSesion()">
             <div class="crearCuenta">
                 No tienes usuario? <a (click)="registrarSolicitud()">Crear Cuenta</a>

@@ -8,7 +8,7 @@
                 <div class="input-register">
                     <label for="ingresarDni">DNI</label>
                     <input type="text" name="ingresarDni" [(ngModel)]="solicitudDto.dni" id="ingresarDni"
-                        [ngModelOptions]="{standalone: true}" class="miImputGeneral tamanio">
+                        [ngModelOptions]="{standalone: true}" class="miImputGeneral tamanio" maxlength=9>
                 </div>
                 <div class="input-register">
                     <label for="ingresarPassword">CONTRASEÑA</label>
@@ -42,8 +42,9 @@
                 </div>
                 <div class="input-register">
                     <label for="ingresarTelefono">TELEFONO</label>
-                    <input type="number" [(ngModel)]="solicitudDto.telefono" [ngModelOptions]="{standalone: true}"
-                        id="ingresarTelefono" class="miImputGeneral tamanio" required>
+                    <input type="text" [(ngModel)]="solicitudDto.telefono" maxlength=9
+                        [ngModelOptions]="{standalone: true}" id="ingresarTelefono" class="miImputGeneral tamanio"
+                        required>
                 </div>
                 <div class="input-register">
                     <label for="ingresarDireccion">DIRECCIÓN</label>
@@ -59,8 +60,8 @@
                 </div>
 
                 <div class="checkBox">
-                    <input type="checkbox" id="registrarAceptarTerminos" required>
-                    <label class="labelCheckBox" for="registrarAceptarTerminos">He leído y acepto los terminos y
+                    <input type="checkbox" name="myData" #myCheckbox>
+                    <label class="labelCheckBox ml-1" for="registrarAceptarTerminos"> He leído y acepto los terminos y
                         condiciones</label>
                 </div>
 

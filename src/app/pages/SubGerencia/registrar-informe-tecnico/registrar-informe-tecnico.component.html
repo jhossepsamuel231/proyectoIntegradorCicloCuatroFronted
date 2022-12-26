@@ -41,7 +41,8 @@
                                 </div>
 
                             </div>
-                            <div class="result">
+
+                            <div class="result" *ngIf="solicitud != undefined">
                                 <div class="form-check form-check-inline">
                                     <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                         data-bs-target="#exampleModalDos" (click)="verDocumentos()">

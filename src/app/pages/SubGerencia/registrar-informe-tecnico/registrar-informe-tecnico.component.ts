@@ -34,6 +34,7 @@ export class RegistrarInformeTecnicoComponent implements OnInit {
     private solicitudService: solicitudService) { }
 
   ngOnInit(): void {
+    console.log(this.solicitud);
   }
 
   seleccionarFile(event: any) {
@@ -123,7 +124,7 @@ export class RegistrarInformeTecnicoComponent implements OnInit {
     })
   }
 
-  verDocumentos(){
+  verDocumentos() {
     this.router.navigate(['/admin-panel/ver-documentos-solicitud']);
   }
 

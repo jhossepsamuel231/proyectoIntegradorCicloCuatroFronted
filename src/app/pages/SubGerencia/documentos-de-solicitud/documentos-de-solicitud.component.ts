@@ -40,6 +40,7 @@ export class DocumentosDeSolicitudComponent implements OnInit {
   }
 
   volver() {
+    localStorage.removeItem('solicitudEncontradaParaSubirInformeTecnico');
     this.router.navigate(['/admin-panel/registrar-informe-tecnico']);
   }
 

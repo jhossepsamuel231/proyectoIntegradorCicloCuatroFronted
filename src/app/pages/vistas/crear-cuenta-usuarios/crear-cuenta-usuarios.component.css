@@ -60,32 +60,6 @@
     width: 100%;
 }
 
-[type="checkbox"] {
-    display: none;
-}
-
-.labelCheckBox {
-    padding-left: 1.3rem;
-    position: relative;
-}
-
-.labelCheckBox:before {
-    content: ' ';
-    border: solid 1px #075004;
-    border-radius: 3px;
-    width: 1.2em;
-    height: 1.2em;
-    position: absolute;
-    left: 0px;
-}
-
-[type="checkbox"]:checked+.labelCheckBox:before {
-    border-color: greenyellow;
-    color: #044550;
-    content: \f1b6;
-    font-family: 'Font Awesome 5 Free';
-}
-
 .miImputGeneral {
     display: block;
     width: 100%;

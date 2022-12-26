@@ -1,0 +1,19 @@
+.paginator {
+    display: none;
+
+}
+
+@media screen and (max-width: 900px) {
+    #wrapper {
+        display: none;
+    }
+
+    .paginator {
+        background-color: rgba(59, 57, 57, 0.596);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
